@@ -1,40 +1,47 @@
-import React from 'react';
-import { TrendingUp, Smartphone, Users, Briefcase, BarChart } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { TrendingUp, Briefcase, Globe } from 'lucide-react';
 import Section from '../components/common/Section';
 import Heading from '../components/common/Heading';
 import Button from '../components/common/Button';
 
 const Services = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace('#', ''));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [hash]);
+
   const services = [
     {
-      title: 'Tráfego Pago',
-      desc: 'Gestão estratégica de anúncios no Google, Facebook, Instagram e TikTok. Criamos campanhas focadas em atrair o público certo e maximizar seu retorno sobre investimento (ROI).',
-      icon: <TrendingUp size={40} />,
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070',
-    },
-    {
-      title: 'Social Media',
-      desc: 'Gerenciamento completo de redes sociais. Produção de conteúdo, design, agendamento e interação com seguidores para fortalecer sua marca e criar uma comunidade engajada.',
-      icon: <Smartphone size={40} />,
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=2074',
-    },
-    {
-      title: 'Consultoria Estratégica',
-      desc: 'Diagnóstico completo do seu negócio e elaboração de planos de ação para crescimento. Identificamos gargalos e oportunidades para otimizar sua operação e aumentar lucros.',
-      icon: <BarChart size={40} />,
+      id: 'consultoria',
+      title: 'Consultoria Especializada',
+      desc: 'Análise e estruturação estratégica completa para o crescimento sustentável do seu negócio. Identificamos gargalos operacionais e oportunidades de mercado para otimizar seus processos e maximizar a lucratividade no ramo alimentício.',
+      icon: <Briefcase size={40} />,
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2070',
     },
     {
-      title: 'Equipe Comercial',
-      desc: 'Estruturação e treinamento de times de vendas. Implementamos processos eficientes de CRM e técnicas de negociação para converter leads em clientes fiéis.',
-      icon: <Users size={40} />,
-      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=2032',
+      id: 'marketing',
+      title: 'Marketing Digital 360º',
+      desc: 'Uma gestão integrada e multicanal de toda sua presença digital. Unimos tráfego pago estratégico, gestão profissional de redes sociais, branding e automação para criar um ecossistema focado em atração e conversão de clientes.',
+      icon: <Globe size={40} />,
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015',
     },
     {
-      title: 'Marketing Digital 360º',
-      desc: 'Uma abordagem integrada que une SEO, E-mail Marketing, Inbound e Branding para criar uma presença digital sólida e consistente para sua empresa.',
-      icon: <Briefcase size={40} />,
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015',
+      id: 'comercial',
+      title: 'Equipe Comercial',
+      desc: 'Recrutamento, treinamento e gestão de times de vendas de alta performance. Implementamos processos eficientes de CRM e técnicas avançadas de negociação para transformar leads em clientes fiéis e escalar seu faturamento.',
+      icon: <TrendingUp size={40} />,
+      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=2032',
     },
   ];
 
@@ -44,15 +51,15 @@ const Services = () => {
       <section className="relative pt-48 pb-20 bg-darker overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1553877615-216b4234bcfb?auto=format&fit=crop&q=80&w=2070"
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2070"
             alt="Services Hero"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-20 scale-110 grayscale"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-dark/95 via-dark/70 to-dark"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-          <Heading level={1}>
+          <Heading level={1} className="mb-4">
             Nossos <span className="text-gold">Serviços</span>
           </Heading>
           <div className="w-24 h-1 bg-gold mx-auto mb-8"></div>
@@ -68,7 +75,8 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+              id={service.id}
+              className={`flex flex-col lg:flex-row items-center gap-16 scroll-mt-32 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}
             >
               <div className="w-full lg:w-1/2">

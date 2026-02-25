@@ -49,10 +49,9 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-serif font-bold mb-6 uppercase tracking-widest text-sm text-gold">Serviços</h4>
                         <ul className="space-y-4 text-sm text-gray-400 uppercase tracking-widest">
-                            <li><Link to="/services" className="hover:text-white transition-colors">Tráfego Pago</Link></li>
-                            <li><Link to="/services" className="hover:text-white transition-colors">Social Media</Link></li>
-                            <li><Link to="/services" className="hover:text-white transition-colors">Consultoria</Link></li>
-                            <li><Link to="/services" className="hover:text-white transition-colors">Equipes Comerciais</Link></li>
+                            <li><Link to="/services#consultoria" className="hover:text-white transition-colors">Consultoria Especializada</Link></li>
+                            <li><Link to="/services#marketing" className="hover:text-white transition-colors">Marketing Digital 360º</Link></li>
+                            <li><Link to="/services#comercial" className="hover:text-white transition-colors">Equipe Comercial</Link></li>
                         </ul>
                     </div>
 

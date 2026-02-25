@@ -8,27 +8,15 @@ import Logo from '../common/Logo';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     return (
-        <header
-            className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-dark/95 backdrop-blur-md h-16 border-b border-white/10' : 'bg-transparent h-24'
-                }`}
-        >
+        <header className="fixed w-full z-50 bg-dark/95 backdrop-blur-md h-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
                 <div className="flex justify-between items-center h-full">
                     {/* Logo */}
                     <Link to="/">
-                        <Logo scrolled={scrolled} />
+                        <Logo />
                     </Link>
 
                     {/* Desktop Navigation */}

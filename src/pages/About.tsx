@@ -134,9 +134,9 @@ const About = () => {
               image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800',
             },
             {
-              name: 'Roberto Santos',
+              name: 'Kennidi Anderson',
               role: 'Head de Tráfego',
-              image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800',
+              image: 'https://i.imgur.com/oDX7U5b.png',
             },
             {
               name: 'Juliana Costa',
@@ -144,17 +144,16 @@ const About = () => {
               image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800',
             },
           ].map((member, index) => (
-            <div key={index} className="group overflow-hidden">
+            <div key={index} className="overflow-hidden">
               <div className="relative mb-6 overflow-hidden rounded-sm aspect-[4/5]">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-110"
+                  className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-xl font-serif font-bold text-white mb-1 group-hover:text-gold transition-colors">{member.name}</h3>
+              <h3 className="text-xl font-serif font-bold text-white mb-1">{member.name}</h3>
               <p className="text-gray-500 text-xs uppercase tracking-[0.2em] font-bold">{member.role}</p>
             </div>
           ))}
