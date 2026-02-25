@@ -6,6 +6,8 @@ interface SectionProps {
     id?: string;
     dark?: boolean;
     darker?: boolean;
+    white?: boolean;
+    cream?: boolean;
 }
 
 const Section: React.FC<SectionProps> = ({
@@ -13,9 +15,11 @@ const Section: React.FC<SectionProps> = ({
     className = '',
     id,
     dark,
-    darker
+    darker,
+    white,
+    cream
 }) => {
-    const bgClass = darker ? 'bg-darker' : dark ? 'bg-dark' : 'bg-dark';
+    const bgClass = darker ? 'bg-darker text-white' : dark ? 'bg-dark text-white' : white ? 'bg-white text-dark' : cream ? 'bg-cream text-dark' : 'bg-dark text-white';
     return (
         <section
             id={id}

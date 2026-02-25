@@ -33,7 +33,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div className="space-y-6">
             <Heading level={2}>
-              Nossa <span className="text-gold">História</span>
+              Nossa <span className="text-terracotta">História</span>
             </Heading>
             <p className="text-gray-400 text-lg leading-relaxed">
               A LS Estrutura Food nasceu com o propósito de revolucionar o mercado de alimentação através de estratégias digitais e gestão eficiente. Identificamos que muitos negócios do setor tinham excelentes produtos, mas falhavam em alcançar seu público e escalar suas vendas.
@@ -43,16 +43,16 @@ const About = () => {
             </p>
           </div>
           <div className="relative">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gold/5 rounded-full blur-3xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-terracotta/5 rounded-full blur-3xl"></div>
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6">
                 <img
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
                   alt="Strategy Meeting"
-                  className="rounded-sm shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+                  className="rounded-sm shadow-2xl"
                   referrerPolicy="no-referrer"
                 />
-                <div className="bg-gold p-6 text-dark text-center rounded-sm">
+                <div className="bg-terracotta p-6 text-white text-center rounded-sm">
                   <div className="text-3xl font-bold font-serif">10+</div>
                   <div className="text-[10px] uppercase font-bold tracking-widest">Anos de Experiência</div>
                 </div>
@@ -61,7 +61,7 @@ const About = () => {
                 <img
                   src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=80&w=1000"
                   alt="Digital Growth"
-                  className="rounded-sm shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+                  className="rounded-sm shadow-2xl"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -71,12 +71,12 @@ const About = () => {
       </Section>
 
       {/* Values */}
-      <Section darker>
+      <Section cream>
         <div className="text-center mb-20">
           <Heading level={2}>
-            Nossos <span className="text-gold">Valores</span>
+            Nossos <span className="text-terracotta">Valores</span>
           </Heading>
-          <div className="w-20 h-1 bg-gold mx-auto"></div>
+          <div className="w-20 h-1 bg-terracotta mx-auto"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
@@ -96,14 +96,14 @@ const About = () => {
               desc: 'Utilizamos dados e inteligência de mercado para tomar as melhores decisões para o seu crescimento.'
             }
           ].map((item, idx) => (
-            <div key={idx} className="bg-dark p-12 border border-white/5 hover:border-gold/30 transition-all duration-500 group">
-              <div className="text-gold mb-8 group-hover:scale-110 transition-transform duration-500">
+            <div key={idx} className="bg-white p-12 border border-dark/5 hover:border-terracotta/30 transition-all duration-500 group shadow-sm hover:shadow-xl">
+              <div className="text-terracotta mb-8 group-hover:scale-110 transition-transform duration-500">
                 {item.icon}
               </div>
-              <Heading level={3} className="text-white group-hover:text-gold transition-colors">
+              <Heading level={3} className="!text-dark group-hover:text-terracotta transition-colors">
                 {item.title}
               </Heading>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-dark/70 leading-relaxed font-light">
                 {item.desc}
               </p>
             </div>

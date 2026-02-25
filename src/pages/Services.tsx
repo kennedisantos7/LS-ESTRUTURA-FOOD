@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { TrendingUp, Briefcase, Globe } from 'lucide-react';
+import { TrendingUp, ShoppingBag, ChefHat, Check } from 'lucide-react';
 import Section from '../components/common/Section';
 import Heading from '../components/common/Heading';
 import Button from '../components/common/Button';
@@ -23,23 +23,23 @@ const Services = () => {
 
   const services = [
     {
-      id: 'consultoria',
-      title: 'Consultoria Especializada',
-      desc: 'Análise e estruturação estratégica completa para o crescimento sustentável do seu negócio. Identificamos gargalos operacionais e oportunidades de mercado para otimizar seus processos e maximizar a lucratividade no ramo alimentício.',
-      icon: <Briefcase size={40} />,
+      id: 'diagnostico',
+      title: 'Diagnóstico e Padronização Operacional',
+      desc: 'Análise profunda de margens, desperdícios e processos. Criamos os manuais de execução que permitem sua operação rodar com precisão, garantindo que a qualidade e o lucro não dependam da sorte ou do talento individual.',
+      icon: <ChefHat size={40} />,
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2070',
     },
     {
-      id: 'marketing',
-      title: 'Marketing Digital 360º',
-      desc: 'Uma gestão integrada e multicanal de toda sua presença digital. Unimos tráfego pago estratégico, gestão profissional de redes sociais, branding e automação para criar um ecossistema focado em atração e conversão de clientes.',
-      icon: <Globe size={40} />,
+      id: 'trafego',
+      title: 'Tráfego Pago p/ Delivery (ROI Direto)',
+      desc: 'Estratégias de aquisição focadas no raio de atuação do seu negócio. Otimizamos suas campanhas para reduzir o custo por pedido e elevar seu ticket médio, direcionando o tráfego para seus canais diretos de venda.',
+      icon: <ShoppingBag size={40} />,
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015',
     },
     {
       id: 'comercial',
-      title: 'Equipe Comercial',
-      desc: 'Recrutamento, treinamento e gestão de times de vendas de alta performance. Implementamos processos eficientes de CRM e técnicas avançadas de negociação para transformar leads em clientes fiéis e escalar seu faturamento.',
+      title: 'Implantação de Equipe de Vendas',
+      desc: 'Transformamos seu WhatsApp em um canal de faturamento previsível. Montamos, recrutamos e treinamos sua equipe comercial para converter cada lead em faturamento e recorrência de pedidos.',
       icon: <TrendingUp size={40} />,
       image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=2032',
     },
@@ -53,7 +53,7 @@ const Services = () => {
           <img
             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2070"
             alt="Services Hero"
-            className="w-full h-full object-cover opacity-20 scale-110 grayscale"
+            className="w-full h-full object-cover opacity-20 scale-110"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-dark/95 via-dark/70 to-dark"></div>
@@ -85,7 +85,7 @@ const Services = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 grayscale hover:grayscale-0"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -111,16 +111,45 @@ const Services = () => {
         </div>
       </Section>
 
+      {/* Programa Estrutura Food */}
+      <Section cream id="metodo" className="border-y border-dark/5">
+        <div className="text-center mb-20">
+          <span className="text-terracotta text-xs font-bold uppercase tracking-[0.3em] mb-4 block">O Caminho para a Escala</span>
+          <Heading level={2}>
+            O Programa <span className="text-terracotta italic font-serif">Estrutura Food</span>
+          </Heading>
+          <p className="text-dark/60 max-w-2xl mx-auto mt-6 text-lg font-light">
+            Um método de 5 etapas desenhado exclusivamente para negócios que faturam, mas ainda não têm domínio total da sua margem e operação.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          {[
+            { step: '01', title: 'Diagnóstico', desc: 'Mapeamento de gargalos e margens reais.' },
+            { step: '02', title: 'Estrutura', desc: 'Implantação da célula de vendas e CRM.' },
+            { step: '03', title: 'Ticket Médio', desc: 'Ajuste de oferta para elevar lucratividade.' },
+            { step: '04', title: 'Tráfego', desc: 'Escala de pedidos via canais diretos.' },
+            { step: '05', title: 'Expansão', desc: 'Formatação para franquias ou novas unidades.' }
+          ].map((phase, i) => (
+            <div key={i} className="bg-white p-8 rounded-sm border border-dark/5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+              <span className="text-5xl font-black text-dark/5 absolute -top-2 -right-2 group-hover:text-terracotta/10 transition-colors">{phase.step}</span>
+              <h4 className="text-dark font-bold text-sm uppercase tracking-widest mb-4 relative z-10">{phase.title}</h4>
+              <p className="text-dark/60 text-xs leading-relaxed relative z-10">{phase.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* CTA Section */}
       <Section darker className="text-center">
         <Heading level={2} className="mb-6">
-          Pronto para <span className="text-gold">Escalar?</span>
+          Sua Operação com <span className="text-gold italic font-serif">Previsibilidade</span>
         </Heading>
         <p className="text-gray-400 max-w-2xl mx-auto mb-10 text-lg">
-          Agende uma consultoria gratuita e descubra o potencial de crescimento do seu negócio.
+          Agende um diagnóstico gratuito e descubra os pontos cegos que estão travando a sua lucratividade.
         </p>
         <Button to="/contact" variant="primary">
-          Falar com um Especialista
+          Solicitar Diagnóstico Estrutural
         </Button>
       </Section>
     </div>

@@ -24,7 +24,7 @@ const Heading: React.FC<HeadingProps> = ({
         4: "text-lg md:text-xl mb-3",
     };
 
-    const colorStyles = light ? "text-white" : "text-white"; // Adjust if needed
+    const colorStyles = light ? "text-white" : "";
 
     return (
         <Tag className={`${baseStyles} ${sizes[level]} ${colorStyles} ${className}`}>

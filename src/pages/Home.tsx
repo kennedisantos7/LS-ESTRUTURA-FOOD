@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Briefcase, Globe, TrendingUp, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Check, Briefcase, Globe, TrendingUp, ArrowUpRight, Utensils, ChefHat, ShoppingBag } from 'lucide-react';
 import Button from '../components/common/Button';
 import Section from '../components/common/Section';
 import Heading from '../components/common/Heading';
@@ -32,11 +32,11 @@ const Home = () => {
                   LS ESTRUTURA E ESTRATÉGIA
                 </h2>
                 <div className="w-24 h-0.5 bg-gradient-to-r from-gold to-transparent opacity-50 mx-auto lg:mx-0"></div>
-                <Heading level={1} className="!mb-4 !leading-[1.1] !font-sans !tracking-tight text-white normal-case !text-2xl md:!text-4xl lg:!text-4xl">
-                  Estrutura e estratégia com clareza para negócios de <span className="italic text-gold font-serif">crescimento acelerado</span>
+                <Heading level={1} className="!mb-4 !leading-[1.1] !font-sans !tracking-tight text-white normal-case !text-4xl md:!text-6xl lg:!text-6xl">
+                  Sua operação food com <span className="italic text-gold font-serif">previsibilidade</span> e <span className="text-white underline decoration-gold/30">margem real</span>
                 </Heading>
-                <p className="text-sm md:text-base text-gray-400 max-w-md md:max-w-xl lg:max-w-md font-light leading-relaxed mx-auto lg:mx-0">
-                  Clareza estratégica, decisões firmes e execução para sustentar crescimento com margem no ramo alimentício.
+                <p className="text-sm md:text-lg text-gray-400 max-w-md md:max-w-xl lg:max-w-xl font-light leading-relaxed mx-auto lg:mx-0">
+                  Não somos apenas uma agência. Implantamos o motor comercial, organizamos seus processos e escalamos seu delivery com foco total em ticket médio e lucro.
                 </p>
               </div>
 
@@ -71,7 +71,7 @@ const Home = () => {
                 <img
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=2000"
                   alt="Team"
-                  className="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 hover:grayscale-0 hover:opacity-100 object-top"
+                  className="w-full h-full object-cover transition-all duration-700 object-top"
                 />
                 {/* Overlay Gradient for mobile "team below" look */}
                 <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
@@ -95,47 +95,49 @@ const Home = () => {
       </section>
 
       {/* About Preview */}
-      <Section darker>
+      <Section cream>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative group">
-            <div className="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-gold/30 group-hover:border-gold/60 transition-colors duration-500"></div>
-            <div className="relative overflow-hidden rounded-sm">
+            <div className="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-terracotta group-hover:border-terracotta/60 transition-colors duration-500"></div>
+            <div className="relative overflow-hidden rounded-sm shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070"
-                alt="About Us"
-                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+                src="https://i.imgur.com/va0lZ8H.png"
+                alt="Estrutura Food Operacional"
+                className="w-full h-auto transition-all duration-700 transform hover:scale-105"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-gold/30 group-hover:border-gold/60 transition-colors duration-500"></div>
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-terracotta group-hover:border-terracotta/60 transition-colors duration-500"></div>
           </div>
           <div className="space-y-6">
+            <h2 className="text-terracotta text-xs font-bold uppercase tracking-[0.3em] mb-4">Arquitetura de Crescimento</h2>
             <Heading level={2}>
-              Estratégia e <span className="text-gold">Resultados</span>
+              Estrutura Comercial e <span className="text-terracotta">Gestão Operacional</span>
             </Heading>
-            <p className="text-gray-400 text-lg leading-relaxed">
-              A LS Estrutura Food é especialista em estruturação e crescimento de empresas do ramo alimentício. Oferecemos soluções completas em marketing digital, consultoria e gestão comercial para levar seu negócio ao próximo nível.
+            <p className="text-lg leading-relaxed text-dark/80">
+              A LS Estrutura Food não entrega apenas posts ou anúncios. Nós implantamos o motor de vendas do seu negócio. Do diagnóstico de processos à formação de equipes, criamos o modelo escalável que sua marca food precisa para expandir.
             </p>
             <ul className="space-y-4 mb-8">
               {[
-                'Consultoria Especializada',
-                'Marketing Digital 360º',
-                'Equipe Comercial'
+                'Padronização de Processos de Venda',
+                'Tráfego Pago com foco em ROI e Ticket Médio',
+                'Implantação de Equipes Comerciais (Internas ou 3ª)',
+                'Formatação de Modelo para Franquias/Expansão'
               ].map((item, idx) => (
-                <li key={idx} className="flex items-center text-gray-300 group">
-                  <div className="w-6 h-6 rounded-full border border-gold/30 flex items-center justify-center mr-4 group-hover:border-gold transition-colors">
-                    <Check className="text-gold" size={14} />
+                <li key={idx} className="flex items-center font-medium group text-sm uppercase tracking-wider text-dark">
+                  <div className="w-6 h-6 rounded-full bg-terracotta/10 flex items-center justify-center mr-4 group-hover:bg-terracotta transition-colors">
+                    <Check className="text-terracotta group-hover:text-white" size={12} />
                   </div>
                   {item}
                 </li>
               ))}
             </ul>
-            <Button to="/about" variant="outline" className="border-none px-0 text-gold hover:bg-transparent hover:text-white group">
-              Saiba Mais <ArrowRight className="ml-2 inline group-hover:translate-x-2 transition-transform" size={16} />
+            <Button to="/about" variant="outline" className="!border-terracotta !text-terracotta hover:!bg-terracotta hover:!text-white group">
+              Nossa História <ArrowRight className="ml-2 inline group-hover:translate-x-2 transition-transform" size={16} />
             </Button>
           </div>
         </div>
-      </Section >
+      </Section>
 
       {/* Services Preview */}
       < Section dark >
@@ -152,19 +154,19 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              title: 'Consultoria Especializada',
-              desc: 'Análise e estruturação estratégica completa para o crescimento sustentável do seu negócio.',
-              icon: <Briefcase className="text-gold" size={32} />,
+              title: 'Diagnóstico e Estrutura',
+              desc: 'Identificação de gargalos operacionais e desenho da estratégia de escala para o modelo food.',
+              icon: <ChefHat size={32} />,
             },
             {
-              title: 'Marketing Digital 360º',
-              desc: 'Gestão completa de presença online, tráfego e redes sociais para maximizar seus resultados.',
-              icon: <Globe className="text-gold" size={32} />,
+              title: 'Tráfego e Conversão Delivery',
+              desc: 'Aquisição hiper-segmentada focada em aumentar o volume de pedidos e o ticket médio direto.',
+              icon: <ShoppingBag size={32} />,
             },
             {
-              title: 'Equipe Comercial',
-              desc: 'Recrutamento, treinamento e gestão de times de alta performance focados em conversão.',
-              icon: <TrendingUp className="text-gold" size={32} />,
+              title: 'Implantação de Equipe Vendas',
+              desc: 'Montagem e treinamento de times focados em converter leads em faturamento recorrente.',
+              icon: <TrendingUp size={32} />,
             },
           ].map((service, index) => (
             <div
@@ -175,8 +177,8 @@ const Home = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
 
               <div className="relative z-10">
-                <div className="w-16 h-16 rounded-xl bg-gold/10 flex items-center justify-center mb-8 group-hover:bg-gold group-hover:scale-110 transition-all duration-500">
-                  <div className="group-hover:text-dark transition-colors duration-500">
+                <div className="w-16 h-16 rounded-xl bg-gold/10 flex items-center justify-center mb-8 group-hover:bg-gold group-hover:scale-110 transition-all duration-500 text-gold group-hover:text-dark">
+                  <div className="transition-colors duration-500">
                     {service.icon}
                   </div>
                 </div>
@@ -202,15 +204,15 @@ const Home = () => {
       </Section>
 
       {/* Cases de Sucesso */}
-      <Section darker className="overflow-hidden">
+      <Section cream className="overflow-hidden">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-xl">
-            <h2 className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4">Crescimento Comprovado</h2>
+            <h2 className="text-terracotta text-xs font-bold uppercase tracking-[0.3em] mb-4">Crescimento Comprovado</h2>
             <Heading level={2} className="mb-0">
-              Cases de <span className="text-gold italic font-serif">Sucesso</span>
+              Cases de <span className="text-terracotta italic font-serif">Sucesso</span>
             </Heading>
           </div>
-          <Button to="/projects" variant="outline" className="!border-none !px-0 !text-gold hover:!text-white group">
+          <Button to="/projects" variant="outline" className="!border-terracotta !text-terracotta hover:!bg-terracotta hover:!text-white group">
             Ver todos os cases <ArrowRight className="ml-2 inline group-hover:translate-x-2 transition-transform" size={16} />
           </Button>
         </div>
@@ -252,12 +254,12 @@ const Home = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"
                   referrerPolicy="no-referrer"
                 />
 
                 {/* Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent group-hover:opacity-60 transition-opacity"></div>
 
                 {/* Content */}
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
