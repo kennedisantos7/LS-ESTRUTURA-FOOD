@@ -36,7 +36,7 @@ const Home = () => {
                   Sua operação food com <span className="italic text-gold font-serif">previsibilidade</span> e <span className="text-white underline decoration-gold/30">margem real</span>
                 </Heading>
                 <p className="text-sm md:text-lg text-gray-400 max-w-md md:max-w-xl lg:max-w-xl font-light leading-relaxed mx-auto lg:mx-0">
-                  Não somos apenas uma agência. Implantamos o motor comercial, organizamos seus processos e escalamos seu delivery com foco total em ticket médio e lucro.
+                  Não somos apenas uma agência. Implantamos o motor comercial, organizamos seus processos e escalamos empresa Food com foco total em ticket médio e lucro.
                 </p>
               </div>
 
