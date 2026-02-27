@@ -5,9 +5,10 @@ interface CounterProps {
     duration?: number;
     suffix?: string;
     prefix?: string;
+    className?: string;
 }
 
-const Counter: React.FC<CounterProps> = ({ end, duration = 2000, suffix = '', prefix = '' }) => {
+const Counter: React.FC<CounterProps> = ({ end, duration = 2000, suffix = '', prefix = '', className = '' }) => {
     const [count, setCount] = useState(0);
     const countRef = useRef<HTMLDivElement>(null);
     const [hasStarted, setHasStarted] = useState(false);
@@ -45,7 +46,7 @@ const Counter: React.FC<CounterProps> = ({ end, duration = 2000, suffix = '', pr
     }, [hasStarted, end, duration]);
 
     return (
-        <div ref={countRef} className="text-5xl md:text-6xl font-serif font-bold mb-2 tracking-tight">
+        <div ref={countRef} className={`font-serif font-bold tracking-tight ${className}`}>
             {prefix}{count}{suffix}
         </div>
     );

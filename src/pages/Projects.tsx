@@ -20,31 +20,10 @@ const Projects = () => {
     }
   }, [hash]);
 
-  const projects = [
-    {
-      title: 'Posicionamento e Branding',
-      client: 'Chá das Cinco',
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2070',
-      category: 'Estratégia de Marca',
-    },
-    {
-      title: 'Estruturação de Equipes',
-      client: 'Franquias BK',
-      image: 'https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=2070',
-      category: 'Consultoria Especializada',
-    },
-    {
-      title: 'Crescimento de 300% em Vendas',
-      client: 'Pizza Hut Marketing',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=2070',
-      category: 'Marketing Digital 360º',
-    },
-  ];
-
   return (
     <div className="bg-dark text-white">
       {/* Hero */}
-      <section className="relative pt-48 pb-20 bg-darker overflow-hidden">
+      <section className="relative pt-32 pb-8 md:pt-40 md:pb-12 bg-darker overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=2070"
@@ -67,14 +46,14 @@ const Projects = () => {
 
       {/* Detailed Case Studies */}
 
-      {/* Case 1: Chá das Cinco */}
-      <Section dark id="cha-das-cinco" className="border-t border-white/5 py-48 scroll-mt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div className="order-2 lg:order-1 space-y-10 animate-fade-in-up">
+      {/* Case 1: Operação Food com 4 Pontos e Indústria Própria */}
+      <Section dark id="operacao-food" className="border-t border-white/5 pt-12 pb-24 md:pt-16 md:pb-32 lg:pt-24 lg:pb-48 scroll-mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="space-y-8 lg:space-y-10 animate-fade-in-up">
             <div>
-              <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Case 01 — Branding & Estratégia</span>
+              <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Case 01 — Destaque</span>
               <Heading level={2} className="!text-5xl md:!text-6xl !font-serif !mb-6 italic">
-                Chá das <span className="text-gold">Cinco</span>
+                Operação <span className="text-gold">Food Completa</span>
               </Heading>
               <div className="w-24 h-0.5 bg-gold/50"></div>
             </div>
@@ -83,25 +62,25 @@ const Projects = () => {
               <div className="bg-darker p-10 border-l-4 border-gold shadow-2xl">
                 <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-4">O Desafio</h4>
                 <p className="text-gray-400 font-light leading-relaxed text-lg italic">
-                  "O principal obstáculo era a desconexão entre a qualidade artesanal do produto e a forma como a marca era percebida no PDV e no digital."
+                  "O principal obstáculo era a falta de conexão estruturada entre a capacidade produtiva e as pontas de venda físicas e digitais."
                 </p>
                 <p className="text-gray-400 font-light leading-relaxed mt-4">
-                  A marca sofria com uma identidade visual que remetia ao amadorismo, impedindo a entrada em empórios de luxo e a prática de preços que refletissem a margem necessária para sustentabilidade do negócio.
+                  A operação possuía 4 pontos de venda e uma indústria própria, mas sofria com processos fragmentados, ausência de arquitetura comercial clara e um marketing que não refletia a qualidade real da operação.
                 </p>
               </div>
 
               <div className="space-y-6">
                 <h4 className="text-white text-sm font-bold uppercase tracking-widest">Nossa Solução</h4>
                 <p className="text-gray-400 font-light leading-relaxed">
-                  Implementamos um plano de rebranding 360º, focando na ancestralidade e na pureza dos ingredientes. Criamos uma nova linguagem fotográfica e transformamos as embalagens em itens de desejo.
+                  Implementamos nossa metodologia de Arquitetura Comercial integrada ao Marketing 360 e soluções de Tecnologia, unificando processos, controlando as pontas e consolidando o funil digital.
                 </p>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
-                    'Redesign de Logotipo e Identidade',
-                    'Estratégia de Storytelling de Marca',
-                    'Packaging Design de Alta Performance',
-                    'Planejamento de Lançamento Digital',
-                    'Curadoria de Experiência do Cliente'
+                    'Estruturação Completa das Unidades',
+                    'Desenvolvimento de Funil Próprio',
+                    'Consolidação da Presença Digital',
+                    'Implementação de Tecnologia e CRM',
+                    'Alinhamento entre Indústria e Lojas'
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-300">
                       <div className="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
@@ -116,34 +95,34 @@ const Projects = () => {
               <div className="bg-gold/5 p-8 rounded-sm space-y-4">
                 <h4 className="text-white text-sm font-bold uppercase tracking-widest">Impacto Estratégico</h4>
                 <p className="text-gray-400 font-light text-sm leading-relaxed">
-                  Reposicionamos a marca para o segmento Premium através de um novo design de embalagens e narrativa de valor. O resultado foi a entrada imediata em 12 novos empórios de luxo.
+                  A operação ganhou previsibilidade e escala, gerando um ecossistema independente e alavancando os resultados consolidados através de processos estruturados e de um ecossistema digital.
                 </p>
                 <div className="pt-4 grid grid-cols-2 gap-10">
                   <div>
-                    <div className="text-4xl font-bold text-white mb-1">85%</div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Aumento Ticket Médio</div>
+                    <div className="text-4xl font-bold text-white mb-1">100%</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Processo Unificado</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-white mb-1">4 Meses</div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Tempo de Implementação</div>
+                    <div className="text-4xl font-bold text-white mb-1">Escala</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Crescimento Estruturado</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 flex flex-col gap-8">
+          <div className="flex flex-col gap-8">
             <div className="relative group">
               <div className="absolute -top-10 -right-10 w-80 h-80 bg-gold/5 rounded-full blur-[100px] group-hover:bg-gold/10 transition-colors"></div>
               <div className="relative overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                 <img
                   src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2070"
-                  alt="Chá das Cinco Case Branding"
+                  alt="Operação Food Industry"
                   className="w-full h-auto transition-all duration-1000 scale-105 group-hover:scale-100"
                 />
               </div>
               <div className="absolute bottom-6 -left-6 bg-gold p-6 max-w-[200px] hidden md:block group-hover:translate-x-4 transition-transform duration-500 shadow-2xl z-10">
-                <p className="text-dark font-serif italic text-sm font-bold">"Evolução visual que se traduziu em lucratividade real."</p>
+                <p className="text-dark font-serif italic text-sm font-bold">"Da fabricação ao cliente final, tudo estruturado."</p>
               </div>
             </div>
 
@@ -160,10 +139,10 @@ const Projects = () => {
         </div>
       </Section>
 
-      {/* Case 2: Franquias BK */}
-      <Section cream id="franquias-bk" className="py-48 scroll-mt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div className="flex flex-col gap-8">
+      {/* Case 2: Experiência Estratégica */}
+      <Section cream id="expansao" className="py-24 md:py-32 lg:py-48 scroll-mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="order-2 lg:order-1 flex flex-col gap-8">
             <div className="relative group">
               <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-terracotta/5 rounded-full blur-[100px] group-hover:bg-terracotta/10 transition-colors"></div>
               <div className="relative overflow-hidden rounded-sm shadow-2xl">
@@ -174,7 +153,7 @@ const Projects = () => {
                 />
               </div>
               <div className="absolute top-6 -right-6 bg-terracotta p-6 max-w-[200px] hidden md:block group-hover:-translate-x-4 transition-transform duration-500 shadow-2xl z-10">
-                <p className="text-white font-serif italic text-sm font-bold">"A padronização foi o divisor de águas para nossa expansão."</p>
+                <p className="text-white font-serif italic text-sm font-bold">"A padronização foi o divisor de águas para a nossa expansão."</p>
               </div>
             </div>
 
@@ -189,11 +168,11 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="space-y-10 animate-fade-in-up">
+          <div className="order-1 lg:order-2 space-y-8 lg:space-y-10 animate-fade-in-up">
             <div>
-              <span className="text-terracotta text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Case 02 — Gestão Comercial & Processos</span>
+              <span className="text-terracotta text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Case 02 — Experiência Estratégica</span>
               <Heading level={2} className="!text-5xl md:!text-6xl !font-serif !mb-6 italic !text-dark">
-                Franquias <span className="text-terracotta">BK</span>
+                Expansão e <span className="text-terracotta">Estruturação Comercial</span>
               </Heading>
               <div className="w-24 h-0.5 bg-terracotta/20"></div>
             </div>
@@ -201,27 +180,27 @@ const Projects = () => {
             <div className="space-y-8">
               <div className="bg-white p-10 border-l-4 border-dark shadow-2xl">
                 <h4 className="text-dark text-sm font-bold uppercase tracking-widest mb-4">O Desafio</h4>
-                <p className="text-dark/80 font-light leading-relaxed text-lg">
-                  Unificar a cultura de vendas e a qualidade de entrega em 8 diferentes unidades, eliminando a variação de resultados que dependia exclusivamente do talento individual de gerentes específicos.
+                <p className="text-dark/80 font-light leading-relaxed text-lg italic">
+                  "Lidar com a complexidade de gerenciar a performance em filiais, mantendo o mesmo padrão de atendimento e conversão."
                 </p>
                 <p className="text-dark/80 font-light leading-relaxed mt-4">
-                  O gargalo comercial impedia a franqueadora de prever lucros e manter um padrão de atendimento que respeitasse as diretrizes da marca global enquanto otimizava as vendas locais.
+                  O crescimento em múltiplas unidades gerava dependência de gerentes específicos, e os indicadores variavam bruscamente, tornando as metas e os lucros de expansão muito imprevisíveis.
                 </p>
               </div>
 
               <div className="space-y-6">
                 <h4 className="text-dark text-sm font-bold uppercase tracking-widest">Nossa Solução</h4>
                 <p className="text-dark/80 font-light leading-relaxed">
-                  Criamos o "Manual LS de Performance Comercial", um guia passo a passo adaptado à realidade do Fast Food. Implementamos treinamentos imersivos e ferramentas de acompanhamento em tempo real.
+                  Realizamos a implantação completa de times e processos comerciais padronizados, inserindo KPIs definidos, treinamentos de time e estruturas sólidas para líderes de área.
                 </p>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
-                    'Manual de Processos Comerciais',
-                    'Academia de Liderança de Vendas',
-                    'Sistemas de Gamificação Interna',
-                    'Painéis de Gestão à Vista (BI)',
-                    'Recrutamento Perfil de Alta Performance',
-                    'Scripts de Upselling de Impacto'
+                    'Padronização de Processos de Vendas',
+                    'Treinamentos de Alta Performance',
+                    'Implantação de Metas e KPIs',
+                    'Auditoria de Qualidade das Filiais',
+                    'Formação de Gerentes Comerciais',
+                    'Painel de Acompanhamento Centralizado'
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-dark/80">
                       <div className="w-6 h-6 rounded-full bg-dark/10 flex items-center justify-center flex-shrink-0">
@@ -236,16 +215,16 @@ const Projects = () => {
               <div className="bg-dark/5 p-8 rounded-sm space-y-4">
                 <h4 className="text-dark text-sm font-bold uppercase tracking-widest">Impacto Operacional</h4>
                 <p className="text-dark/80 font-light text-sm leading-relaxed">
-                  Implantamos o Manual de Performance Comercial em todas as 8 unidades, unificando processos e garantindo que cada gerente operasse sob a mesma métrica de eficiência.
+                  Criamos uma base sólida de gestão que permitia replicar o sucesso de uma loja em outra de modo sistemático.
                 </p>
                 <div className="pt-4 grid grid-cols-2 gap-10">
                   <div>
-                    <div className="text-4xl font-bold text-terracotta mb-1">40%</div>
-                    <div className="text-[10px] text-dark/50 uppercase tracking-widest font-bold">Redução de Turnover</div>
+                    <div className="text-4xl font-bold text-terracotta mb-1">Múltiplas</div>
+                    <div className="text-[10px] text-dark/50 uppercase tracking-widest font-bold">Unidades Padronizadas</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-terracotta mb-1">28%</div>
-                    <div className="text-[10px] text-dark/50 uppercase tracking-widest font-bold">Margem de Upselling</div>
+                    <div className="text-4xl font-bold text-terracotta mb-1">100%</div>
+                    <div className="text-[10px] text-dark/50 uppercase tracking-widest font-bold">Acompanhamento Sistêmico</div>
                   </div>
                 </div>
               </div>
@@ -254,14 +233,14 @@ const Projects = () => {
         </div>
       </Section>
 
-      {/* Case 3: Pizza Hut Marketing */}
-      <Section dark id="pizza-hut" className="py-48 pb-64 scroll-mt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div className="order-2 lg:order-1 space-y-10 animate-fade-in-up">
+      {/* Case 3: Marketing 360 */}
+      <Section dark id="marketing-360" className="py-24 pb-32 md:py-32 md:pb-40 lg:py-48 lg:pb-64 scroll-mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="space-y-8 lg:space-y-10 animate-fade-in-up">
             <div>
-              <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Case 03 — Marketing Digital 360º</span>
+              <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Case 03 — Marketing 360</span>
               <Heading level={2} className="!text-5xl md:!text-6xl !font-serif !mb-6 italic">
-                Pizza Hut <span className="text-gold">Marketing</span>
+                Crescimento <span className="text-gold">Estruturado</span>
               </Heading>
               <div className="w-24 h-0.5 bg-gold/50"></div>
             </div>
@@ -269,27 +248,27 @@ const Projects = () => {
             <div className="space-y-8">
               <div className="bg-darker p-10 border-l-4 border-gold shadow-2xl">
                 <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-4">O Desafio</h4>
-                <p className="text-gray-400 font-light leading-relaxed text-lg">
-                  Romper a barreira das taxas de 27% a 30% cobradas por aplicativos de terceiros, direcionando o tráfego para os canais próprios da marca sem perder volume de pedidos.
+                <p className="text-gray-400 font-light leading-relaxed text-lg italic">
+                  "Sair da dependência do acaso e criar uma máquina previsível de aquisição de novos clientes e posicionamento forte no meio digital."
                 </p>
                 <p className="text-gray-400 font-light leading-relaxed mt-4">
-                  A marca precisava de um funil de conversão proprietário que fosse tão eficiente quanto os grandes players de mercado, mantendo a rentabilidade da operação de delivery.
+                  A operação não possuía uma marca forte e contínua no ambiente online que transmitisse autoridade, dependendo exclusivamente de ações orgânicas pontuais ou de plataformas externas, minando suas margens.
                 </p>
               </div>
 
               <div className="space-y-6">
                 <h4 className="text-white text-sm font-bold uppercase tracking-widest">Nossa Solução</h4>
                 <p className="text-gray-400 font-light leading-relaxed">
-                  Desenvolvemos uma estratégia de aquisição hiper-segmentada, utilizando dados de geolocalização e comportamento de consumo para impactar o cliente no momento exato do desejo.
+                  Desenvolvemos a estratégia completa de Marketing 360: unimos branding e conteúdo premium a metodologias diretas de aquisição e tráfego pago altamente segmentado.
                 </p>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
-                    'Tráfego Pago (Meta & Google Ads)',
-                    'CRM e Automação de WhatsApp',
-                    'Programas de Fidelidade e Retenção',
-                    'Otimização de LPs de Venda Própria',
-                    'Growth Hacking para Delivery',
-                    'Atribuição de Dados Avançada'
+                    'Estratégia de Posicionamento Digital',
+                    'Gestão de Tráfego e Aquisição Ativa',
+                    'Criação de Conteúdo Estratégico',
+                    'Growth Hacking para Food Service',
+                    'Retenção de Clientes e Estruturação de Base',
+                    'Maximização de Ticket no Digital'
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-300">
                       <div className="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
@@ -304,28 +283,28 @@ const Projects = () => {
               <div className="bg-gold/5 p-8 rounded-sm space-y-4">
                 <h4 className="text-white text-sm font-bold uppercase tracking-widest">Impacto Financeiro</h4>
                 <p className="text-gray-400 font-light text-sm leading-relaxed">
-                  Reduzimos a dependência de marketplaces. Migramos 35% do volume de pedidos para canais próprios em 90 dias, economizando mais de 20% em taxas de entrega.
+                  Construímos uma base fiel de clientes onde o custo de aquisição tornou-se previsível e a percepção de valor da marca foi elevada exponencialmente.
                 </p>
                 <div className="pt-4 grid grid-cols-2 gap-10">
                   <div>
-                    <div className="text-4xl font-bold text-white mb-1">-25%</div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Dependência de Apps</div>
+                    <div className="text-4xl font-bold text-white mb-1">Evolução</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">De Marca a Ouro</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-white mb-1">+20%</div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Margem de Lucro Direta</div>
+                    <div className="text-4xl font-bold text-white mb-1">LTV</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Fidelidade Comprovada</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 flex flex-col gap-8">
+          <div className="flex flex-col gap-8">
             <div className="relative group">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gold/5 rounded-full blur-[100px] group-hover:bg-gold/10 transition-colors"></div>
               <div className="relative overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                 <img
-                  src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=2070"
+                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=2070"
                   alt="Pizza Hut Case Marketing"
                   className="w-full h-auto transition-all duration-1000 scale-105 group-hover:scale-100"
                 />
@@ -338,7 +317,7 @@ const Projects = () => {
             <div className="relative group">
               <div className="relative overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                 <img
-                  src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=2000"
+                  src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=2000"
                   alt="Pizza Hut Case Delivery"
                   className="w-full h-auto transition-all duration-1000 scale-105 group-hover:scale-100"
                 />

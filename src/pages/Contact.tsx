@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <div className="bg-dark text-white">
       {/* Hero */}
-      <section className="relative pt-48 pb-20 bg-darker overflow-hidden">
+      <section className="relative pt-32 pb-8 md:pt-40 md:pb-12 bg-darker overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2070"
@@ -32,9 +32,9 @@ const Contact = () => {
 
       {/* Contact Content */}
       <Section dark>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
           {/* Form */}
-          <div className="bg-darker p-10 rounded-sm shadow-2xl border border-white/5 relative">
+          <div className="bg-darker p-8 lg:p-10 rounded-sm shadow-2xl border border-white/5 relative">
             <div className="absolute top-0 left-0 w-1 h-20 bg-gold"></div>
             <Heading level={2} className="mb-10">
               Envie uma <span className="text-gold">Mensagem</span>
@@ -103,7 +103,7 @@ const Contact = () => {
                 Informações de <span className="text-gold">Contato</span>
               </Heading>
               <p className="text-gray-400 text-lg leading-relaxed font-light">
-                Agende uma conversa com nossos especialistas. Estamos estrategicamente localizados para atender todo o território nacional.
+                Agende uma conversa com nossos especialistas. Estamos estrategicamente localizados para atender a todo o território nacional.
               </p>
 
               <div className="space-y-10">

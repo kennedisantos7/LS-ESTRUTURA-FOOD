@@ -13,46 +13,54 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
     const location = useLocation();
 
     return (
-        <>
-            {/* Backdrop */}
-            <div
-                className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                    }`}
-                onClick={onClose}
-            />
-
-            {/* Sidebar */}
-            <aside
-                className={`fixed top-0 right-0 h-full w-[80%] max-w-[300px] bg-dark border-l border-white/10 z-[70] transition-transform duration-300 ease-in-out transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
-                    }`}
-            >
-                <div className="flex justify-end p-6">
-                    <button onClick={onClose} className="text-white hover:text-gold transition-colors">
-                        <X size={28} />
+        <div
+            className={`fixed inset-0 z-[9999] bg-[#051119] transition-all duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'
+                }`}
+        >
+            <div className="flex flex-col h-full w-full">
+                {/* Header in Menu */}
+                <div className="flex justify-end p-6 h-20 items-center">
+                    <button
+                        onClick={onClose}
+                        className="p-2 text-white hover:text-gold transition-all duration-300"
+                        aria-label="Fechar menu"
+                    >
+                        <X size={32} />
                     </button>
                 </div>
 
-                <nav className="px-6 py-4 space-y-4">
+                {/* Navigation Links */}
+                <nav className="flex-1 flex flex-col items-center justify-center space-y-8 px-6">
                     {NAV_LINKS.map((link) => (
                         <Link
                             key={link.name}
                             to={link.path}
                             onClick={onClose}
-                            className={`block py-4 text-base font-medium uppercase tracking-widest border-b border-white/5 transition-colors ${location.pathname === link.path ? 'text-gold' : 'text-gray-300 hover:text-gold'
+                            className={`text-2xl font-serif uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname === link.path ? 'text-gold' : 'text-white hover:text-gold'
                                 }`}
                         >
                             {link.name}
                         </Link>
                     ))}
 
-                    <div className="pt-8">
-                        <Button to="/contact" variant="outline" className="w-full" onClick={onClose}>
-                            Orçamento
+                    <div className="pt-12">
+                        <Button
+                            to="/contact"
+                            variant="primary"
+                            className="!px-12 !py-4"
+                            onClick={onClose}
+                        >
+                            Diagnóstico
                         </Button>
                     </div>
                 </nav>
-            </aside>
-        </>
+
+                {/* Footer in Menu */}
+                <div className="p-12 text-center text-gray-400 text-[10px] uppercase tracking-[0.3em] font-medium opacity-60">
+                    LS Estrutura e Estratégia &copy; {new Date().getFullYear()}
+                </div>
+            </div>
+        </div>
     );
 };
 
