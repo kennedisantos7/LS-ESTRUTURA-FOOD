@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { TrendingUp, Globe, ChefHat, Check } from 'lucide-react';
+import { TrendingUp, Globe, ChefHat, Check, Search, Settings, Tag, Rocket, BarChart3 } from 'lucide-react';
 import Section from '../components/common/Section';
 import Heading from '../components/common/Heading';
 import Button from '../components/common/Button';
@@ -83,25 +83,113 @@ const Services = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-[#020609] via-transparent to-[#020609]"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+          <span className="inline-flex items-center gap-2 text-terracotta text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-5">
+            <span className="w-8 h-px bg-terracotta/60 inline-block" />
+            Arquitetura de Crescimento
+            <span className="w-8 h-px bg-terracotta/60 inline-block" />
+          </span>
           <Heading level={1} className="!text-white mb-4 !font-serif">
-            Nossas <span className="text-gold italic">Soluções</span>
+            O Nosso <span className="text-terracotta italic">Método</span>
           </Heading>
-          <div className="w-24 h-1 bg-gold mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-terracotta mx-auto mb-8"></div>
           <p className="text-gray-400 max-w-2xl mx-auto text-xl font-light leading-relaxed">
-            Implantamos o motor comercial e tecnológico para operações food que buscam escala previsível e lucratividade real.
+            Uma jornada estruturada para tirar sua operação do improviso e colocá-la na rota da escala lucrativa.
           </p>
         </div>
       </section>
 
+      {/* Metodo Section – logo após o hero */}
+      <section id="metodo" className="relative bg-dark overflow-hidden pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-24 scroll-mt-20">
+
+        {/* Decorative background text */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-[0.025] overflow-hidden">
+          <span className="text-[18rem] font-serif font-bold text-white whitespace-nowrap -rotate-6">MÉTODO</span>
+        </div>
+
+        {/* Top accent line */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Steps */}
+          <div className="relative">
+            {/* Desktop connector line */}
+            <div className="hidden lg:block absolute top-[3.5rem] left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent z-0" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
+              {[
+                { step: '01', title: 'Imersão', desc: 'Diagnóstico profundo de margens, gargalos e oportunidades reais.', icon: <Search size={22} />, iconBg: 'bg-gold/15', iconColor: 'text-gold', border: 'border-gold/30 hover:border-gold/60', dotColor: 'bg-gold', grad: 'from-gold/[0.15] to-transparent' },
+                { step: '02', title: 'Estrutura', desc: 'Implantação de processos comerciais e CRM orientado a conversão.', icon: <Settings size={22} />, iconBg: 'bg-terracotta/15', iconColor: 'text-terracotta', border: 'border-terracotta/30 hover:border-terracotta/60', dotColor: 'bg-terracotta', grad: 'from-terracotta/[0.15] to-transparent' },
+                { step: '03', title: 'Oferta', desc: 'Ajuste de mix e valor para elevar ticket médio e margem real.', icon: <Tag size={22} />, iconBg: 'bg-gold/15', iconColor: 'text-gold', border: 'border-gold/30 hover:border-gold/60', dotColor: 'bg-gold', grad: 'from-gold/[0.15] to-transparent' },
+                { step: '04', title: 'Escala', desc: 'Expansão via tráfego pago, canais proprietários e aquisição direta.', icon: <Rocket size={22} />, iconBg: 'bg-terracotta/15', iconColor: 'text-terracotta', border: 'border-terracotta/30 hover:border-terracotta/60', dotColor: 'bg-terracotta', grad: 'from-terracotta/[0.15] to-transparent' },
+                { step: '05', title: 'Gestão', desc: 'Análise contínua de indicadores para crescimento previsível e consistente.', icon: <BarChart3 size={22} />, iconBg: 'bg-gold/15', iconColor: 'text-gold', border: 'border-gold/30 hover:border-gold/60', dotColor: 'bg-gold', grad: 'from-gold/[0.15] to-transparent' },
+              ].map((phase, i) => (
+                <div key={i} className="group relative flex lg:flex-col gap-3 lg:gap-0 items-start lg:items-center">
+
+                  {/* Mobile vertical connector */}
+                  {i < 4 && (
+                    <div className="lg:hidden absolute left-[1.2rem] top-12 w-px h-[calc(100%+1.5rem)] bg-gradient-to-b from-white/20 via-white/10 to-transparent z-0" />
+                  )}
+
+                  {/* Icon */}
+                  <div className="relative z-10 flex-shrink-0">
+                    <div className={`w-10 h-10 lg:w-14 lg:h-14 rounded-full ${phase.iconBg} border ${phase.border} flex items-center justify-center ${phase.iconColor} group-hover:scale-110 transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,0.3)] backdrop-blur-sm`}>
+                      {phase.icon}
+                    </div>
+                    <div className={`absolute -top-1 -right-1 w-5 h-5 rounded-full ${phase.dotColor} flex items-center justify-center shadow-lg border-2 border-dark`}>
+                      <span className="text-[9px] font-black text-dark leading-none">{i + 1}</span>
+                    </div>
+                  </div>
+
+                  {/* Card */}
+                  <div className={`lg:mt-6 flex-1 w-full bg-gradient-to-b ${phase.grad} border ${phase.border} rounded-xl p-5 lg:p-6 transition-all duration-500 group-hover:-translate-y-1 lg:group-hover:-translate-y-2 group-hover:shadow-2xl lg:text-center backdrop-blur-[2px]`}>
+                    <div className="text-4xl lg:text-5xl font-serif italic font-bold text-white/[0.08] group-hover:text-white/[0.12] transition-colors duration-500 leading-none mb-1 select-none">
+                      {phase.step}
+                    </div>
+                    <h4 className={`${phase.iconColor} font-black text-[11px] uppercase tracking-[0.25em] mb-2`}>
+                      {phase.title}
+                    </h4>
+                    <p className="text-gray-200 text-sm leading-relaxed font-normal group-hover:text-white transition-colors duration-300">
+                      {phase.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom note */}
+          <div className="mt-14 md:mt-20 text-center">
+            <div className="inline-block px-6 py-3 border border-white/5 rounded-full bg-white/[0.02]">
+              <p className="text-gray-500 text-xs font-light tracking-wide italic">
+                Cada etapa é implementada com método, dados e visão de longo prazo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom accent line */}
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      </section>
+
       {/* Services List */}
       <Section dark>
+        <div className="text-center mb-12 lg:mb-16">
+          <span className="text-gold text-xs font-bold uppercase tracking-[0.35em] mb-4 block">Soluções Integradas</span>
+          <Heading level={2} className="!text-4xl md:!text-5xl lg:!text-6xl">
+            Nossas <span className="text-gold">Soluções</span>
+          </Heading>
+          <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-4" />
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light">
+            Cada solução é uma peça da nossa arquitetura de crescimento, aplicada de forma integrada à sua operação.
+          </p>
+        </div>
         <div className="space-y-24 lg:space-y-40">
           {services.map((service, index) => (
             <div
               key={index}
               id={service.id}
-              className={`flex flex-col lg:flex-row items-center gap-10 lg:gap-16 scroll-mt-24 lg:scroll-mt-32 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
+              className={`flex flex-col lg:flex-row items-center gap-10 lg:gap-16 scroll-mt-24 lg:scroll-mt-32 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
             >
               <div className="w-full lg:w-1/2">
                 <div className="relative group p-4 border border-gold/10 bg-gold/5 rounded-sm">
@@ -143,39 +231,6 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Metodo Section Re-styled */}
-      <Section cream id="metodo" className="relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
-
-        <div className="text-center mb-16 lg:mb-24">
-          <span className="text-terracotta text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Arquitetura de Crescimento</span>
-          <Heading level={2} className="!text-dark !text-5xl">
-            O Nosso <span className="text-terracotta italic font-serif">Método</span>
-          </Heading>
-          <p className="text-dark/60 max-w-2xl mx-auto mt-6 text-lg font-light">
-            Uma jornada estruturada para tirar sua operação do improviso e colocá-la na rota da escala lucrativa.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          {[
-            { step: '01', title: 'Imersão', desc: 'Diagnóstico profundo de margens e gargalos.' },
-            { step: '02', title: 'Estrutura', desc: 'Implantação de processos e CRM comercial.' },
-            { step: '03', title: 'Oferta', desc: 'Ajuste de mix e valor para elevar ticket médio.' },
-            { step: '04', title: 'Escala', desc: 'Expansão via tráfego e canais proprietários.' },
-            { step: '05', title: 'Gestão', desc: 'Análise de dados para crescimento contínuo.' }
-          ].map((phase, i) => (
-            <div key={i} className="group relative">
-              <div className="text-6xl font-serif italic text-dark/5 absolute -top-8 left-0 group-hover:text-terracotta/10 transition-colors">{phase.step}</div>
-              <div className="relative pt-4 border-t border-dark/10 group-hover:border-terracotta transition-colors duration-500">
-                <h4 className="text-dark font-bold text-xs uppercase tracking-widest mb-3">{phase.title}</h4>
-                <p className="text-dark/70 text-sm leading-relaxed font-light">{phase.desc}</p>
               </div>
             </div>
           ))}

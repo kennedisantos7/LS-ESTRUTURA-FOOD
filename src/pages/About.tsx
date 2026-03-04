@@ -26,21 +26,25 @@ const About = () => {
           <div className="space-y-8">
             <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-light">
               <p>
-                A LS Estrutura Food nasceu da experiência prática em expansão, gestão comercial e estruturação de negócios.
+                A LS Estrutura Food nasce da experiência acumulada na <span className="text-white font-semibold">LS Direção Estratégica</span>, empresa especializada em estruturação comercial e crescimento empresarial em diferentes segmentos.
               </p>
               <p>
-                Ao atuar diretamente em operações do setor alimentício, identificamos um padrão: empresas com bom produto, boa demanda e potencial de crescimento, mas sem estrutura comercial, digital e operacional para sustentar escala.
+                A vertical food surge da aplicação prática dessa base estratégica em operações alimentícias, integrando direção empresarial, Marketing 360 e tecnologia em um modelo único de crescimento.
+              </p>
+              <p>
+                Ao atuar no setor, identificamos um padrão recorrente: empresas com bom produto, demanda ativa e potencial real de expansão, mas sem estrutura comercial, digital e operacional capaz de sustentar escala.
               </p>
 
-              <div className="py-8 border-y border-white/10 flex flex-col gap-2">
-                <span className="text-3xl font-serif italic text-white">"Não faltava venda. <span className="text-gold">Faltava sistema."</span></span>
+              <div className="py-8 border-y border-white/10 flex flex-col gap-3">
+                <span className="text-base font-light text-gray-500">Havia capacidade. Havia mercado.</span>
+                <span className="text-3xl font-serif italic text-white">"Faltava <span className="text-gold">sistema."</span></span>
               </div>
 
               <p>
-                Foi a partir dessa lacuna que estruturamos um modelo próprio de crescimento integrado, unindo direção empresarial, marketing 360 e tecnologia aplicada para gerar previsibilidade e margem real.
+                Foi a partir dessa lacuna que consolidamos nossa <span className="text-white font-semibold">Arquitetura de Crescimento</span>, um modelo integrado que conecta estratégia, aquisição e operação para gerar previsibilidade, controle e margem real.
               </p>
               <p>
-                Hoje, atuamos na organização estratégica de operações food que desejam crescer com controle, dados e estrutura.
+                Hoje, estruturamos operações food que desejam crescer com método, dados e visão empresarial.
               </p>
 
               <p className="text-white font-bold uppercase tracking-widest text-sm pt-4">
@@ -53,18 +57,19 @@ const About = () => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full translate-x-12 -translate-y-12"></div>
 
             <Heading level={2} className="!text-2xl mb-8">
-              Experiência <span className="text-gold">Acumulada</span>
+              Nossa Base <span className="text-gold">Estratégica</span>
             </Heading>
 
-            <span className="text-gold text-xs font-bold uppercase tracking-widest mb-10 block">10+ anos de atuação em:</span>
+            <span className="text-gold text-xs font-bold uppercase tracking-widest block">LS Direção Estratégica</span>
+            <span className="text-gray-300 text-xs font-medium tracking-wide mb-10 block mt-1">→ base que sustenta a vertical food:</span>
 
             <ul className="space-y-6 mb-12">
               {[
-                'Expansão e estruturação empresarial',
-                'Implantação de processos comerciais',
-                'Marketing digital orientado a ROI',
-                'Gestão e organização de equipes',
-                'Estruturação para múltiplas unidades e expansão'
+                'Estruturação comercial e crescimento empresarial',
+                'Direção empresarial aplicada a operações alimentícias',
+                'Marketing 360 integrado à operação',
+                'Tecnologia e automação orientadas à escala',
+                'Arquitetura de crescimento com previsibilidade e margem real'
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-4 group">
                   <div className="w-5 h-5 rounded-full bg-gold/10 flex items-center justify-center mt-1 group-hover:bg-gold transition-colors">
@@ -77,7 +82,7 @@ const About = () => {
 
             <div className="pt-8 border-t border-white/10">
               <p className="text-sm italic text-gray-500">
-                Nossa atuação integra visão empresarial e execução digital.
+                Nossa atuação integra visão empresarial e execução digital em um modelo único de crescimento.
               </p>
             </div>
           </div>
@@ -138,31 +143,25 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
               name: 'Lucas Silveira',
-              role: 'CEO e Estrategista Empresarial',
-              image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800',
-              bio: 'Especialista em gestão de alta performance e expansão de unidades, focado em transformar gargalos operacionais em lucro real.'
+              role: 'CEO & Estrategista Empresarial',
+              image: 'https://i.imgur.com/z4mSrzy.jpeg',
+              bio: 'Especialista em gestão de alta performance e expansão de unidades. Responsável pela arquitetura comercial e pela estrutura estratégica que transforma gargalos operacionais em lucro real.'
             },
             {
               name: 'Kenidi Anderson',
-              role: 'Co-fundador e Head de Tráfego e Tecnologia',
+              role: 'Co-fundador & Head de Tráfego e Tecnologia',
               image: 'https://i.imgur.com/oDX7U5b.png',
-              bio: 'Arquiteto de stack tecnológica e aquisição direta, domina a engenharia de tráfego focada em escala de delivery e ativação de leads.'
+              bio: 'Arquiteto de stack tecnológica e aquisição direta. Estrutura funis, automações e engenharia de tráfego orientados à escala e previsibilidade.'
             },
             {
               name: 'Sarah Frutuoso',
-              role: 'Head de Marketing Digital e Posicionamento',
-              image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800',
-              bio: 'Estrategista de marca responsável por criar o posicionamento que diferencia operações food no mercado e constrói autoridade digital.'
-            },
-            {
-              name: 'Mariane Aro',
-              role: 'Head de Vendas',
-              image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800',
-              bio: 'Lidera a estruturação da célula comercial, padronizando o atendimento e a conversão do WhatsApp para gerar faturamento recorrente.'
+              role: 'Head de Marketing Digital & Posicionamento',
+              image: 'https://i.imgur.com/hGH2OLp.jpeg',
+              bio: 'Estrategista de marca especializada em posicionamento e copy estratégica. Constrói autoridade digital e diferencia operações food em mercados competitivos.'
             },
           ].map((member, index) => (
             <div key={index} className="group">

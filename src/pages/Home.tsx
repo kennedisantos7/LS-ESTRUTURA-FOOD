@@ -127,8 +127,8 @@ const Home = () => {
             </div>
             <ul className="space-y-4 mb-8">
               {[
-                'Marketing 360 – Posicionamento e Aquisição',
-                'Direção Empresarial – Da Operação à Escala',
+                'Marketing 360 → Posicionamento e Aquisição',
+                'Direção Empresarial → Da Operação à Escala',
                 'Tecnologia e Automação'
               ].map((item, idx) => (
                 <li key={idx} className="flex items-center font-medium group text-sm uppercase tracking-wider text-dark">
@@ -139,7 +139,7 @@ const Home = () => {
                 </li>
               ))}
             </ul>
-            <Button to="/services#metodo" variant="outline" className="!border-terracotta !text-terracotta hover:!bg-terracotta hover:!text-white group">
+            <Button to="/services" variant="outline" className="!border-terracotta !text-terracotta hover:!bg-terracotta hover:!text-white group">
               Conheça Nosso Método de Estruturação <ArrowRight className="ml-2 inline group-hover:translate-x-2 transition-transform" size={16} />
             </Button>
           </div>
@@ -240,13 +240,13 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Cases de Sucesso */}
+      {/* Aplicação Real */}
       <Section cream className="relative">
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 lg:mb-16 gap-6 md:gap-8">
           <div className="text-center md:text-left">
             <span className="text-terracotta text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Experiência Aplicada em Estruturação e Crescimento</span>
             <Heading level={2} className="!mb-0 !text-4xl md:!text-5xl">
-              Cases de <span className="text-terracotta italic font-serif">Sucesso</span>
+              Aplicação <span className="text-terracotta italic font-serif">Real</span>
             </Heading>
           </div>
           <Button to="/services#metodo" variant="outline" className="!border-terracotta !text-terracotta hover:!bg-terracotta hover:!text-white group !rounded-full !px-8 text-xs md:text-sm">
