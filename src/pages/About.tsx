@@ -90,47 +90,107 @@ const About = () => {
       </Section>
 
       {/* Principles */}
-      <Section cream>
-        <div className="text-center mb-12 lg:mb-20">
-          <span className="text-terracotta text-xs font-bold uppercase tracking-[0.4em] mb-4 block">Fundamentos</span>
-          <Heading level={2} className="!text-dark">
-            Princípios que guiam nosso <span className="text-terracotta">Trabalho</span>
-          </Heading>
-          <div className="w-20 h-1 bg-terracotta mx-auto mt-6"></div>
+      <section className="relative py-20 md:py-28 lg:py-36 bg-darker overflow-hidden">
+
+        {/* Decorative background text */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-[0.03] overflow-hidden">
+          <span className="text-[16rem] font-serif font-bold text-white whitespace-nowrap -rotate-6">BASE</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              icon: <ShieldCheck size={40} />,
-              title: 'Resultado com Estrutura',
-              desc: 'Crescimento sustentável exige processo, indicadores e controle de margem.'
-            },
-            {
-              icon: <Users size={40} />,
-              title: 'Parceria Estratégica',
-              desc: 'Não atuamos como fornecedor. Atuamos como extensão estratégica da operação.'
-            },
-            {
-              icon: <Database size={40} />,
-              title: 'Decisão Baseada em Dados',
-              desc: 'Toda estrutura é construída com base em indicadores reais, não suposições.'
-            }
-          ].map((item, idx) => (
-            <div key={idx} className="bg-white p-12 border border-dark/5 hover:border-terracotta/20 transition-all duration-500 group shadow-sm hover:shadow-xl flex flex-col items-center text-center">
-              <div className="text-terracotta mb-8 group-hover:scale-110 transition-transform duration-500">
-                {item.icon}
+        {/* Accent lines */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-terracotta/20 to-transparent" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Header */}
+          <div className="text-center mb-16 lg:mb-24">
+            <span className="inline-flex items-center gap-3 text-terracotta text-[10px] font-black uppercase tracking-[0.4em] mb-5">
+              <span className="w-8 h-px bg-terracotta/60" />
+              Fundamentos
+              <span className="w-8 h-px bg-terracotta/60" />
+            </span>
+            <Heading level={2} className="!text-white !text-4xl md:!text-6xl !mb-0">
+              Princípios que guiam nosso <span className="text-terracotta italic font-serif">Trabalho</span>
+            </Heading>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-terracotta to-transparent mx-auto mt-6" />
+          </div>
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              {
+                icon: <ShieldCheck size={36} />,
+                number: '01',
+                title: 'Resultado com Estrutura',
+                desc: 'Crescimento sustentável exige processo, indicadores e controle de margem.',
+                accent: 'gold',
+                borderHover: 'hover:border-gold/50',
+                iconBg: 'bg-gold/10 text-gold',
+                iconHover: 'group-hover:bg-gold group-hover:text-dark',
+                glow: 'bg-gold/10',
+                numColor: 'text-gold/10',
+              },
+              {
+                icon: <Users size={36} />,
+                number: '02',
+                title: 'Parceria Estratégica',
+                desc: 'Não atuamos como fornecedor. Atuamos como extensão estratégica da operação.',
+                accent: 'terracotta',
+                borderHover: 'hover:border-terracotta/50',
+                iconBg: 'bg-terracotta/10 text-terracotta',
+                iconHover: 'group-hover:bg-terracotta group-hover:text-white',
+                glow: 'bg-terracotta/10',
+                numColor: 'text-terracotta/10',
+              },
+              {
+                icon: <Database size={36} />,
+                number: '03',
+                title: 'Decisão Baseada em Dados',
+                desc: 'Toda estrutura é construída com base em indicadores reais, não suposições.',
+                accent: 'blue',
+                borderHover: 'hover:border-blue-400/50',
+                iconBg: 'bg-blue-500/10 text-blue-400',
+                iconHover: 'group-hover:bg-blue-500 group-hover:text-white',
+                glow: 'bg-blue-500/10',
+                numColor: 'text-blue-400/10',
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className={`group relative bg-[#071622] p-10 rounded-3xl border border-white/5 ${item.borderHover} transition-all duration-700 overflow-hidden hover:-translate-y-3 shadow-2xl`}
+              >
+                {/* Large decorative number */}
+                <div className={`absolute -top-4 -right-2 text-[8rem] font-serif font-black ${item.numColor} leading-none select-none transition-all duration-700 group-hover:scale-110 group-hover:opacity-60`}>
+                  {item.number}
+                </div>
+
+                {/* Glow backdrop on hover */}
+                <div className={`absolute -bottom-10 -left-10 w-40 h-40 ${item.glow} rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000`} />
+
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Icon */}
+                  <div className={`w-16 h-16 rounded-2xl ${item.iconBg} ${item.iconHover} flex items-center justify-center mb-8 transition-all duration-500 group-hover:scale-110 shadow-2xl`}>
+                    {item.icon}
+                  </div>
+
+                  <Heading level={3} className="!text-white !text-xl md:!text-2xl !font-bold !mb-4 group-hover:text-white transition-colors">
+                    {item.title}
+                  </Heading>
+
+                  <p className="text-gray-400 leading-relaxed text-sm font-light group-hover:text-gray-200 transition-colors">
+                    {item.desc}
+                  </p>
+
+                  {/* Bottom accent bar */}
+                  <div className={`mt-10 h-0.5 bg-gradient-to-r from-transparent ${item.accent === 'gold' ? 'via-gold/50' : item.accent === 'terracotta' ? 'via-terracotta/50' : 'via-blue-500/50'} to-transparent -translate-x-full group-hover:translate-x-0 transition-transform duration-1000`} />
+                </div>
               </div>
-              <Heading level={3} className="!text-xl !text-dark group-hover:text-terracotta transition-colors mb-4">
-                {item.title}
-              </Heading>
-              <p className="text-dark/60 leading-relaxed font-light text-sm">
-                {item.desc}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
+
 
       {/* Team */}
       <Section dark>
@@ -143,18 +203,18 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-6 lg:gap-10 pb-12 -mx-4 px-4 lg:mx-0 lg:px-0 no-scrollbar snap-x snap-mandatory">
           {[
             {
               name: 'Lucas Silveira',
               role: 'CEO & Estrategista Empresarial',
-              image: 'https://i.imgur.com/z4mSrzy.jpeg',
+              image: 'https://i.imgur.com/sCSzDNm.png',
               bio: 'Especialista em gestão de alta performance e expansão de unidades. Responsável pela arquitetura comercial e pela estrutura estratégica que transforma gargalos operacionais em lucro real.'
             },
             {
-              name: 'Kenidi Anderson',
+              name: 'Kennidi Anderson',
               role: 'Co-fundador & Head de Tráfego e Tecnologia',
-              image: 'https://i.imgur.com/oDX7U5b.png',
+              image: 'https://i.imgur.com/eJwamKp.png',
               bio: 'Arquiteto de stack tecnológica e aquisição direta. Estrutura funis, automações e engenharia de tráfego orientados à escala e previsibilidade.'
             },
             {
@@ -164,23 +224,49 @@ const About = () => {
               bio: 'Estrategista de marca especializada em posicionamento e copy estratégica. Constrói autoridade digital e diferencia operações food em mercados competitivos.'
             },
           ].map((member, index) => (
-            <div key={index} className="group">
-              <div className="relative mb-6 overflow-hidden rounded-sm aspect-[4/5] bg-darker border border-white/5">
+            <div
+              key={index}
+              className="group flex flex-col bg-[#071622] p-6 lg:p-8 rounded-2xl border border-white/5 hover:border-gold/30 transition-all duration-700 min-w-[260px] sm:min-w-[320px] lg:min-w-0 snap-center shadow-2xl hover:-translate-y-2"
+            >
+              <div className="relative mb-6 overflow-hidden rounded-xl aspect-square sm:aspect-[4/5] bg-darker border border-white/5">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071622] via-transparent to-transparent opacity-40"></div>
               </div>
-              <h3 className="text-xl font-serif font-bold text-white mb-1 group-hover:text-gold transition-colors">{member.name}</h3>
-              <p className="text-gold/60 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">{member.role}</p>
-              <div className="h-0.5 w-8 bg-gold/30 mb-4 group-hover:w-full transition-all duration-500"></div>
-              <p className="text-gray-400 text-xs leading-relaxed font-light opacity-80">
-                {member.bio}
-              </p>
+
+              <div className="flex flex-col flex-1">
+                <h3 className="text-xl font-serif font-bold text-white mb-1 group-hover:text-gold transition-colors">{member.name}</h3>
+                <p className="text-gold/80 text-[10px] uppercase tracking-[0.2em] font-black mb-4">{member.role}</p>
+
+                <div className="h-0.5 w-8 bg-gold/30 mb-5 group-hover:w-16 transition-all duration-500"></div>
+
+                <p className="text-gray-400 text-xs leading-relaxed font-light opacity-80 group-hover:opacity-100 transition-opacity">
+                  {member.bio}
+                </p>
+
+                <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                  <span className="text-[9px] font-black text-gold uppercase tracking-widest">Especialista LS</span>
+                  <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+                    <Check size={14} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Decorative Glow */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gold/5 rounded-full blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>
           ))}
+        </div>
+
+        {/* Mobile Swipe Navigation Indicator */}
+        <div className="flex lg:hidden justify-center items-center gap-2 mt-2">
+          <div className="w-6 h-1 bg-gold/40 rounded-full"></div>
+          <span className="text-[9px] uppercase tracking-widest text-gray-500 font-bold">Arraste para o lado</span>
+          <div className="w-6 h-1 bg-white/10 rounded-full"></div>
         </div>
       </Section>
     </div>

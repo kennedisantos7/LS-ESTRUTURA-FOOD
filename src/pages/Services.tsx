@@ -4,9 +4,11 @@ import { TrendingUp, Globe, ChefHat, Check, Search, Settings, Tag, Rocket, BarCh
 import Section from '../components/common/Section';
 import Heading from '../components/common/Heading';
 import Button from '../components/common/Button';
+import { useDiagnosticModal } from '../context/DiagnosticModalContext';
 
 const Services = () => {
   const { hash } = useLocation();
+  const { openModal } = useDiagnosticModal();
 
   useEffect(() => {
     if (hash) {
@@ -28,7 +30,7 @@ const Services = () => {
       subtitle: 'Posicionamento e Aquisição',
       desc: 'Estruturamos a presença digital completa da sua marca. Não fazemos apenas posts; criamos um ecossistema de aquisição focado em atrair, converter e fidelizar o público certo para o seu negócio food.',
       icon: <Globe size={40} />,
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2070',
+      image: '/images/marketing-digital-sites.png',
       features: [
         'Tráfego Pago focado em ROI Direto',
         'Estratégia de Posicionamento e Branding',
@@ -246,7 +248,7 @@ const Services = () => {
           <p className="text-gray-400 max-w-2xl mx-auto mb-10 text-xl font-light">
             Agende um diagnóstico estratégico gratuito e descubra agora como transformar sua operação food em um motor de lucro.
           </p>
-          <Button to="/contact" variant="primary" className="!px-12 !py-5 !text-lg shadow-xl shadow-gold/5">
+          <Button onClick={openModal} variant="primary" className="!px-12 !py-5 !text-lg shadow-xl shadow-gold/5">
             Solicitar Diagnóstico Estratégico
           </Button>
         </div>

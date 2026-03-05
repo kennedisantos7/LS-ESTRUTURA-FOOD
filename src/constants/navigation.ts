@@ -6,9 +6,9 @@ export const NAV_LINKS = [
 ];
 
 export const CONTACT_INFO = {
-  phone: '(11) 99999-9999',
+  phone: '(17) 99162-5639',
   email: 'contato@lsestruturafood.com.br',
   address: 'Rua Gastronômica, 123 - São Paulo, SP',
   instagram: 'https://instagram.com/lsestruturafood',
-  whatsapp: 'https://wa.me/5511999999999',
+  whatsapp: 'https://wa.me/5517991625639',
 };

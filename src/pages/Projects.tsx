@@ -51,7 +51,7 @@ const Projects = () => {
           {/* Left Content */}
           <div className="space-y-8 lg:space-y-10 animate-fade-in-up">
             <div>
-              <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Case 01 — Destaque</span>
+              <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Destaque</span>
               <Heading level={2} className="!text-4xl md:!text-5xl lg:!text-6xl !font-serif !mb-6 italic">
                 Estrutura Integrada: <span className="text-gold">Indústria + 4 Pontos de Venda</span>
               </Heading>
@@ -201,7 +201,7 @@ const Projects = () => {
           {/* Right Content */}
           <div className="order-1 lg:order-2 space-y-8 lg:space-y-10 animate-fade-in-up">
             <div>
-              <span className="text-terracotta text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Case 02 — Experiência Estratégica</span>
+              <span className="text-terracotta text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Experiência Estratégica</span>
               <Heading level={2} className="!text-4xl md:!text-5xl lg:!text-6xl !font-serif !mb-6 italic !text-dark">
                 Expansão e <span className="text-terracotta">Estrutura Comercial</span>
               </Heading>
@@ -300,7 +300,7 @@ const Projects = () => {
           {/* Left Content */}
           <div className="space-y-8 lg:space-y-10 animate-fade-in-up">
             <div>
-              <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Case 03 — Especialização Técnica</span>
+              <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Especialização Técnica</span>
               <Heading level={2} className="!text-4xl md:!text-5xl lg:!text-6xl !font-serif !mb-6 italic">
                 Marketing 360 <span className="text-gold">Aplicado ao Food</span>
               </Heading>
@@ -386,11 +386,11 @@ const Projects = () => {
           <div className="flex flex-col gap-8">
             <div className="relative group">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gold/5 rounded-full blur-[100px] group-hover:bg-gold/10 transition-colors"></div>
-              <div className="relative overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+              <div className="relative overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/5">
                 <img
-                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=2070"
-                  alt="Pizza Hut Case Marketing"
-                  className="w-full h-auto transition-all duration-1000 scale-105 group-hover:scale-100"
+                  src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=2000"
+                  alt="Professional Web Development and Strategy"
+                  className="w-full h-auto transition-all duration-1000 scale-105 group-hover:scale-100 opacity-90 group-hover:opacity-100"
                 />
               </div>
               <div className="absolute bottom-6 -right-6 bg-gold p-6 max-w-[200px] hidden md:block group-hover:-translate-x-4 transition-transform duration-500 shadow-2xl z-10">
@@ -399,11 +399,11 @@ const Projects = () => {
             </div>
 
             <div className="relative group">
-              <div className="relative overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+              <div className="relative overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/5">
                 <img
-                  src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=2000"
-                  alt="Pizza Hut Case Delivery"
-                  className="w-full h-auto transition-all duration-1000 scale-105 group-hover:scale-100"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000"
+                  alt="Digital Marketing Strategy Execution"
+                  className="w-full h-auto transition-all duration-1000 scale-105 group-hover:scale-100 opacity-90 group-hover:opacity-100"
                 />
               </div>
             </div>

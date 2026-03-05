@@ -1,17 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Briefcase, Globe, TrendingUp, ArrowUpRight, Utensils, ChefHat, ShoppingBag, Users, Target, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Check, Globe, TrendingUp, ArrowUpRight, ChefHat, Users, Target, ShieldCheck } from 'lucide-react';
 import Button from '../components/common/Button';
 import Section from '../components/common/Section';
 import Heading from '../components/common/Heading';
 import Counter from '../components/common/Counter';
+import { useDiagnosticModal } from '../context/DiagnosticModalContext';
 
 const Home = () => {
+  const { openModal } = useDiagnosticModal();
 
   return (
     <div className="bg-dark text-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-0 md:pt-40 md:pb-24 bg-dark">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16 md:pt-40 md:pb-24 bg-dark">
         {/* Subtle Background Pattern/Logo */}
         <div className="absolute right-0 top-0 w-1/2 h-full opacity-5 pointer-events-none select-none hidden lg:block">
           <div className="text-[40rem] font-serif font-bold -rotate-12 translate-x-1/4 -translate-y-1/4">LS</div>
@@ -40,7 +42,7 @@ const Home = () => {
                 </p>
               </div>
 
-              <Button to="/contact" variant="primary" className="w-full sm:w-auto !rounded-md !px-6 !py-3 !text-sm md:!px-10 md:!py-4 md:!text-base !lowercase first-letter:uppercase hover:scale-105 transition-transform">
+              <Button onClick={openModal} variant="primary" className="w-full sm:w-auto !rounded-md !px-6 !py-3 !text-sm md:!px-10 md:!py-4 md:!text-base !lowercase first-letter:uppercase hover:scale-105 transition-transform">
                 Solicitar Diagnóstico Estratégico
               </Button>
 
@@ -65,29 +67,48 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Image Content - Responsive Behavior */}
-            <div className="relative w-full mt-8 lg:mt-0 animate-fade-in-up delay-300 max-w-[320px] md:max-w-sm lg:max-w-[350px] mx-auto lg:ml-auto">
-              <div className="relative z-10 w-full aspect-[4/5] flex items-end justify-center overflow-hidden lg:rounded-lg shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=2000"
-                  alt="Team"
-                  className="w-full h-full object-cover transition-all duration-700 object-top"
-                />
-                {/* Overlay Gradient for mobile "team below" look */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
-              </div>
+            {/* Right Image Content - Side by Side (Increased Size) */}
+            <div className="relative w-full mt-12 lg:mt-0 animate-fade-in-up delay-300 max-w-3xl mx-auto lg:ml-auto lg:max-w-4xl">
+              <div className="grid grid-cols-2 gap-4 md:gap-6 items-start">
+                {/* Image 1 */}
+                <div className="space-y-4">
+                  <div className="relative group aspect-[2/3] overflow-hidden rounded-xl lg:rounded-2xl shadow-2xl border border-white/10 transition-all duration-500 hover:border-gold/30">
+                    <img
+                      src="https://i.imgur.com/oXkAI8l.png"
+                      alt="CEO - LS Estrutura Food"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent opacity-80"></div>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-white text-base md:text-lg font-serif mb-1">LUCAS</h3>
+                    <span className="text-gold text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] opacity-80">CEO</span>
+                  </div>
+                </div>
 
-              {/* Pagination Dots (Style Reference) */}
-              <div className="flex justify-center gap-2 mt-4 lg:hidden">
-                <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
-                <div className="w-4 h-1.5 rounded-full bg-gold"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                {/* Image 2 */}
+                <div className="space-y-4">
+                  <div className="relative group aspect-[2/3] overflow-hidden rounded-xl lg:rounded-2xl shadow-2xl border border-white/10 transition-all duration-500 hover:border-gold/30">
+                    <img
+                      src="https://i.imgur.com/XWxJaFI.png"
+                      alt="CO-FUNDADOR - LS Estrutura Food"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent opacity-80"></div>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-white text-base md:text-lg font-serif mb-1">KENNIDI</h3>
+                    <span className="text-gold text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] opacity-80">CO-FUNDADOR</span>
+                  </div>
+                </div>
               </div>
 
               {/* Decorative elements - Desktop Only */}
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 border-l-4 border-b-4 border-gold/20 hidden lg:block"></div>
-              <div className="absolute -top-6 -right-6 w-32 h-32 border-r-4 border-t-4 border-gold/20 hidden lg:block"></div>
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-gold/5 rounded-full blur-[100px] -z-10"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 border-r-2 border-b-2 border-gold/10 hidden lg:block"></div>
+              <div className="absolute -top-6 -left-6 w-32 h-32 border-l-2 border-t-2 border-gold/10 hidden lg:block"></div>
             </div>
 
           </div>
@@ -147,96 +168,119 @@ const Home = () => {
       </Section>
 
       {/* Services Preview */}
-      <Section dark>
-        <div className="text-center mb-12 lg:mb-20">
-          <Heading level={2}>
-            Nossas <span className="text-gold">Soluções</span>
+      <Section dark className="overflow-hidden">
+        <div className="text-center mb-16 md:mb-24">
+          <span className="text-gold text-[10px] md:text-sm font-black uppercase tracking-[0.4em] mb-4 block animate-fade-in-up">Ecossistema de Escala</span>
+          <Heading level={2} className="!text-4xl md:!text-6xl !mb-6">
+            Nossas <span className="text-gold italic font-serif">Soluções</span>
           </Heading>
-          <div className="w-20 h-1 bg-gold mx-auto mb-6"></div>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Oferecemos um portfólio completo de serviços para acelerar o crescimento do seu negócio.
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8"></div>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+            Arquitetura de crescimento completa, desenhada para transformar sua operação food em um motor de lucro previsível.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 lg:gap-8 pb-12 -mx-4 px-4 md:mx-0 md:px-0 no-scrollbar snap-x snap-mandatory">
           {[
             {
               title: 'Marketing 360',
               subtitle: 'Posicionamento e Aquisição',
-              desc: 'Estruturamos a presença digital da sua marca para atrair, converter e fidelizar clientes.',
+              desc: 'Estruturamos sua presença digital para atrair e converter com previsibilidade.',
               icon: <Globe size={32} />,
-              link: 'marketing'
+              link: 'marketing',
+              color: 'gold',
+              bgGrad: 'from-gold/20 via-gold/5 to-transparent',
+              iconBg: 'bg-gold/10 text-gold group-hover:bg-gold',
+              border: 'group-hover:border-gold/50'
             },
             {
               title: 'Direção Empresarial',
               subtitle: 'Da Operação à Escala',
-              desc: 'Organizamos o crescimento da sua empresa do modelo operacional ao processo de vendas.',
+              desc: 'Organizamos o crescimento do modelo operacional ao processo de vendas.',
               icon: <ChefHat size={32} />,
-              link: 'direcao'
+              link: 'direcao',
+              color: 'terracotta',
+              bgGrad: 'from-terracotta/20 via-terracotta/5 to-transparent',
+              iconBg: 'bg-terracotta/10 text-terracotta group-hover:bg-terracotta',
+              border: 'group-hover:border-terracotta/50'
             },
             {
               title: 'Tecnologia e Automação',
               subtitle: 'Ativos Digitais Próprios',
-              desc: 'Implantamos ativos digitais próprios que aumentam controle e margem.',
+              desc: 'Implantamos ativos que aumentam o controle, a margem e a inteligência de dados.',
               icon: <TrendingUp size={32} />,
               link: 'tecnologia',
+              color: 'blue',
+              bgGrad: 'from-blue-500/20 via-blue-500/5 to-transparent',
+              iconBg: 'bg-blue-500/10 text-blue-500 group-hover:bg-blue-500',
+              border: 'group-hover:border-blue-500/50',
               features: [
-                'Catálogo digital',
-                'Sites e landing pages',
-                'Automação de atendimento e CRM',
-                'Integrações estratégicas',
-                'Sistemas que reduzem esforço operacional'
+                'Catálogo Digital Próprio',
+                'Landing Pages de Escala',
+                'Automação de CRM',
+                'BI e Dashboards Reais'
               ]
             },
           ].map((service, index) => (
             <Link
               key={index}
               to={`/services#${service.link}`}
-              className="group relative bg-[#071622] p-10 border border-white/5 hover:border-gold/40 transition-all duration-500 overflow-hidden flex flex-col h-full block"
+              className={`group relative bg-[#071622] p-8 md:p-12 border border-white/5 rounded-3xl transition-all duration-700 overflow-hidden flex flex-col h-full min-w-[290px] md:min-w-0 snap-center ${service.border} hover:-translate-y-4 shadow-2xl`}
             >
-              {/* Background Glow */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
+              {/* Animated Glow Backdrop */}
+              <div className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${service.bgGrad} rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000`}></div>
 
               <div className="relative z-10 flex flex-col h-full">
-                <div className="w-16 h-16 rounded-xl bg-gold/10 flex items-center justify-center mb-8 group-hover:bg-gold group-hover:scale-110 transition-all duration-500 text-gold group-hover:text-dark">
-                  <div className="transition-colors duration-500">
-                    {service.icon}
-                  </div>
+                <div className={`w-16 h-16 rounded-2xl ${service.iconBg} flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110 group-hover:text-dark shadow-2xl`}>
+                  {service.icon}
                 </div>
 
-                <Heading level={3} className="!text-xl !font-sans group-hover:text-gold transition-colors duration-300 !mb-1">
+                <Heading level={3} className="!text-2xl !font-bold !mb-2 group-hover:text-white transition-colors duration-300">
                   {service.title}
                 </Heading>
-                <div className="text-gold/80 text-sm font-medium mb-4 uppercase tracking-wider">
+                <div className={`text-sm font-black mb-6 uppercase tracking-[0.2em] ${service.color === 'gold' ? 'text-gold' : service.color === 'terracotta' ? 'text-terracotta' : 'text-blue-400'}`}>
                   {service.subtitle}
                 </div>
 
-                <p className="text-gray-400 mb-6 text-sm leading-relaxed font-light">
+                <p className="text-gray-400 mb-8 text-base leading-relaxed font-light">
                   {service.desc}
                 </p>
 
                 {service.features && (
-                  <ul className="mb-8 space-y-2">
+                  <ul className="mb-10 space-y-3">
                     {service.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-center text-[10px] text-gray-400 uppercase tracking-wider">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gold/40 mr-2 flex-shrink-0"></div>
+                      <li key={fIdx} className="flex items-center text-[10px] text-gray-500 uppercase tracking-widest font-black group-hover:text-gray-300 transition-colors">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500/40 mr-3"></div>
                         {feature}
                       </li>
                     ))}
                   </ul>
                 )}
 
-                <div className="mt-auto pt-6 border-t border-white/5 group-hover:border-gold/20 transition-colors">
-                  <span className="inline-flex items-center text-[10px] tracking-[0.2em] font-medium uppercase text-gray-500 group-hover:text-white transition-all group-hover:translate-x-2">
-                    Conhecer Detalhes <ArrowRight className="ml-2 inline group-hover:translate-x-1 transition-transform" size={12} />
+                <div className="mt-auto pt-8 border-t border-white/5 group-hover:border-white/10 flex items-center justify-between">
+                  <span className="text-[10px] tracking-[0.3em] font-black uppercase text-gray-500 group-hover:text-white transition-all">
+                    Conhecer Detalhes
                   </span>
+                  <div className={`w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white transition-all duration-500 group-hover:rotate-45 ${service.color === 'gold' ? 'group-hover:bg-gold' : service.color === 'terracotta' ? 'group-hover:bg-terracotta' : 'group-hover:bg-blue-500'} group-hover:text-dark`}>
+                    <ArrowUpRight size={18} />
+                  </div>
                 </div>
               </div>
 
-              {/* Decorative Corner */}
-              <div className="absolute bottom-0 right-0 w-24 h-24 bg-gold/5 rounded-tl-full translate-x-12 translate-y-12 group-hover:translate-x-8 group-hover:translate-y-8 transition-transform duration-700"></div>
+              {/* Bottom decorative bar */}
+              <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent ${service.color === 'gold' ? 'via-gold/50' : service.color === 'terracotta' ? 'via-terracotta/50' : 'via-blue-500/50'} to-transparent w-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000`}></div>
             </Link>
           ))}
+        </div>
+
+        {/* Mobile Nav Indicator */}
+        <div className="flex md:hidden justify-center items-center gap-3 mt-4">
+          <div className="flex gap-1.5">
+            <div className="w-1.5 h-1.5 rounded-full bg-gold"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+          </div>
+          <span className="text-[9px] uppercase tracking-[0.2em] text-gray-500 font-bold">Deslize para ver todas</span>
         </div>
       </Section>
 
@@ -254,12 +298,13 @@ const Home = () => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="flex overflow-x-auto lg:overflow-visible lg:grid lg:grid-cols-3 gap-6 lg:gap-10 pt-16 pb-12 -mx-4 px-4 lg:mx-0 lg:px-0 no-scrollbar snap-x snap-mandatory items-stretch">
           {[
             {
               title: 'Operação Food com 4 Pontos e Indústria Própria',
               subtitle: 'Arquitetura Comercial + Marketing 360 + Tecnologia',
               category: 'Destaque',
+              tagColor: 'bg-gold text-dark',
               image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2070',
               results: [
                 'Estruturação completa',
@@ -273,10 +318,13 @@ const Home = () => {
             {
               title: 'Experiência em Expansão e Estrutura Comercial',
               subtitle: 'Atuação em operações com múltiplas unidades',
-              category: 'Experiência Estratégica',
+              category: 'Gestão Estratégica',
+              tagColor: 'bg-terracotta text-white',
               image: 'https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=2070',
               results: [
-                'Implantação de times e processos comerciais'
+                'Implantação de componentes',
+                'Padronização de processos',
+                'Escala com controle real'
               ],
               btnText: 'Conhecer experiência',
               anchor: 'expansao'
@@ -285,8 +333,13 @@ const Home = () => {
               title: 'Crescimento estruturado com Marketing 360',
               subtitle: 'Posicionamento + Aquisição + Conteúdo Estratégico',
               category: 'Marketing 360',
-              image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=2070',
-              results: [],
+              tagColor: 'bg-[#003d5b] text-white border border-white/20',
+              image: '/images/marketing-digital-sites.png',
+              results: [
+                'Autoridade digital',
+                'Aquisição previsível',
+                'Ativos próprios'
+              ],
               btnText: 'Entender como aplicamos',
               anchor: 'marketing-360'
             }
@@ -294,37 +347,46 @@ const Home = () => {
             <Link
               key={index}
               to={`/projects#${project.anchor}`}
-              className="group flex flex-col bg-[#051119] rounded-sm overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/5 hover:border-gold/30"
+              className="group relative flex flex-col bg-[#071622] rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 lg:hover:-translate-y-3 border border-white/5 hover:border-gold/30 min-w-[300px] sm:min-w-[380px] lg:min-w-0 snap-center"
             >
               {/* Image Container */}
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-[16/11] overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                  className="w-full h-full object-cover transition-transform duration-[1500ms] lg:group-hover:scale-110 opacity-70 group-hover:opacity-100"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="px-4 py-1.5 bg-gold text-dark text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071622] via-transparent to-transparent opacity-60"></div>
+
+                <div className="absolute top-4 left-4 z-20">
+                  <span className={`px-4 py-1.5 ${project.tagColor} text-[10px] font-black uppercase tracking-[0.2em] rounded-lg shadow-2xl`}>
                     {project.category}
                   </span>
                 </div>
               </div>
 
               {/* Text Content */}
-              <div className="p-8 flex flex-col flex-1 bg-gradient-to-b from-[#051119] to-[#020609]">
-                <span className="text-gold/60 text-[10px] font-bold uppercase tracking-widest mb-3 block leading-relaxed">{project.subtitle}</span>
-                <Heading level={3} className="!text-xl !mb-6 !leading-snug !text-white group-hover:text-gold transition-colors duration-300">
+              <div className="p-8 flex flex-col flex-1 bg-gradient-to-b from-[#071622] to-[#020609] relative z-10 -mt-6 rounded-t-3xl">
+                <span className="text-gold/80 text-[10px] font-black uppercase tracking-[0.3em] mb-4 block leading-relaxed opacity-70 group-hover:opacity-100 transition-opacity">
+                  {project.subtitle}
+                </span>
+
+                <Heading level={3} className="!text-xl md:!text-2xl !mb-6 !leading-[1.3] !text-white group-hover:text-gold transition-colors duration-500 !font-sans !font-bold">
                   {project.title}
                 </Heading>
 
                 {project.results && project.results.length > 0 && (
-                  <div className="mb-8 space-y-3">
-                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Resultados:</span>
-                    <ul className="space-y-2">
+                  <div className="mb-8 space-y-4">
+                    <div className="flex items-center gap-2">
+                      <div className="h-px flex-1 bg-gradient-to-r from-gold/30 to-transparent"></div>
+                      <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest whitespace-nowrap">Resultados</span>
+                      <div className="h-px flex-1 bg-gradient-to-l from-gold/30 to-transparent"></div>
+                    </div>
+                    <ul className="grid grid-cols-1 gap-2.5">
                       {project.results.map((res, rIdx) => (
-                        <li key={rIdx} className="flex items-start text-xs text-gray-300 font-light">
-                          <Check className="text-gold mr-2 flex-shrink-0 mt-0.5" size={14} />
+                        <li key={rIdx} className="flex items-center text-[11px] text-gray-400 font-medium group-hover:text-gray-200 transition-colors">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gold/50 mr-2 flex-shrink-0"></div>
                           <span>{res}</span>
                         </li>
                       ))}
@@ -332,15 +394,27 @@ const Home = () => {
                   </div>
                 )}
 
-                <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest group-hover:text-gold transition-colors pr-4">{project.btnText}</span>
-                  <div className="w-10 h-10 rounded-sm bg-white/5 flex items-center justify-center text-white group-hover:bg-gold group-hover:text-dark transition-all duration-500 flex-shrink-0">
+                <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                  <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] group-hover:text-white transition-all transform lg:group-hover:translate-x-1 duration-500">
+                    {project.btnText}
+                  </span>
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white group-hover:bg-gold group-hover:text-dark transition-all duration-700 shadow-2xl lg:group-hover:rotate-45">
                     <ArrowRight size={18} />
                   </div>
                 </div>
               </div>
+
+              {/* Shine effect on hover (Desktop only for better performance) */}
+              <div className="absolute inset-0 opacity-0 lg:group-hover:opacity-5 transition-opacity pointer-events-none duration-1000 bg-gradient-to-tr from-white via-transparent to-white"></div>
             </Link>
           ))}
+        </div>
+
+        {/* Mobile Swipe Navigation Indicator */}
+        <div className="flex lg:hidden justify-center items-center gap-2 mt-2 group">
+          <div className="w-8 h-1 bg-gold/40 rounded-full animate-pulse"></div>
+          <span className="text-[9px] uppercase tracking-widest text-gray-500 font-bold">Deslize para ver mais</span>
+          <div className="w-8 h-1 bg-gold/40 rounded-full animate-pulse"></div>
         </div>
       </Section>
 
