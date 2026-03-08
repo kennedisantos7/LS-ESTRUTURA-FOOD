@@ -45,6 +45,69 @@ const Projects = () => {
         </AnimatedSection>
       </section>
 
+      {/* Partners / Brands Section */}
+      <div className="bg-darker border-y border-white/5 py-12 overflow-hidden relative group">
+        <div className="max-w-7xl mx-auto px-4 mb-10">
+          <p className="text-[10px] text-gold/60 font-black uppercase tracking-[0.4em] text-center md:text-left opacity-70">
+            Empresas que confiam em nossa Estrutura
+          </p>
+        </div>
+
+        {/* Desktop View: Static Row */}
+        <div className="hidden md:flex justify-between items-center max-w-7xl mx-auto px-4 opacity-50 hover:opacity-100 transition-opacity duration-1000">
+          {[
+            { name: 'Chá das Cinco', url: 'https://i.imgur.com/2UfXp9S.png', isText: true },
+            { name: 'Burger King', url: 'https://logo.clearbit.com/burgerking.com.br' },
+            { name: 'Nestlé', url: 'https://logo.clearbit.com/nestle.com.br' },
+            { name: 'Ambev', url: 'https://logo.clearbit.com/ambev.com.br' },
+            { name: 'Seara', url: 'https://logo.clearbit.com/seara.com.br' },
+            { name: 'Coca-Cola', url: 'https://logo.clearbit.com/cocacola.com.br' },
+            { name: 'Heineken', url: 'https://logo.clearbit.com/heineken.com.br' },
+            { name: 'iFood', url: 'https://logo.clearbit.com/ifood.com.br' }
+          ].map((brand, i) => (
+            <div key={i} className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105 px-4 h-12">
+              {brand.isText ? (
+                <span className="text-white font-serif italic text-xl font-bold whitespace-nowrap tracking-tighter">{brand.name}</span>
+              ) : (
+                <img src={brand.url} alt={brand.name} className="h-full object-contain max-w-[120px]" />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile View: Auto Carousel */}
+        <div className="md:hidden flex overflow-hidden relative py-4">
+          <div className="flex animate-scroll whitespace-nowrap">
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="flex items-center">
+                {[
+                  { name: 'Chá das Cinco', url: '', isText: true },
+                  { name: 'Burger King', url: 'https://logo.clearbit.com/burgerking.com.br' },
+                  { name: 'Nestlé', url: 'https://logo.clearbit.com/nestle.com.br' },
+                  { name: 'Ambev', url: 'https://logo.clearbit.com/ambev.com.br' },
+                  { name: 'Seara', url: 'https://logo.clearbit.com/seara.com.br' },
+                  { name: 'Coca-Cola', url: 'https://logo.clearbit.com/cocacola.com.br' },
+                  { name: 'Heineken', url: 'https://logo.clearbit.com/heineken.com.br' },
+                  { name: 'iFood', url: 'https://logo.clearbit.com/ifood.com.br' }
+                ].map((brand, j) => (
+                  <div key={j} className="flex items-center justify-center px-10 h-8 opacity-60">
+                    {brand.isText ? (
+                      <span className="text-white font-serif italic text-lg font-bold whitespace-nowrap tracking-tighter">{brand.name}</span>
+                    ) : (
+                      <img src={brand.url} alt={brand.name} className="h-full object-contain max-w-[100px] grayscale" />
+                    )}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+          {/* Gradient Overlays for smooth edges */}
+          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-darker via-darker/80 to-transparent z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-darker via-darker/80 to-transparent z-10"></div>
+        </div>
+      </div>
+
+
       {/* ─── Case 1 ─── */}
       <Section dark id="operacao-food" className="border-t border-white/5 pt-12 pb-24 md:pt-16 md:pb-32 lg:pt-24 lg:pb-48 scroll-mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
