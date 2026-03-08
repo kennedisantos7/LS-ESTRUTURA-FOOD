@@ -14,8 +14,9 @@ const Logo: React.FC<LogoProps> = ({ className = '', scrolled = false }) => {
                 className="h-10 transition-all duration-300"
                 referrerPolicy="no-referrer"
             />
-            <span className="font-serif font-bold tracking-wider text-white text-xl transition-all duration-300">
-                <span className="text-gold">ESTRUTURA</span> FOOD
+            <span className="text-base transition-all duration-300 tracking-tight">
+                <span className="font-sans font-black text-white tracking-tighter">ESTRUTURA</span>
+                <span className="font-serif text-gold ml-1.5">FOOD</span>
             </span>
         </div>
     );

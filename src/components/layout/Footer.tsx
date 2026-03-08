@@ -14,8 +14,9 @@ const Footer = () => {
                     <div className="space-y-6">
                         <Link to="/" className="flex items-center gap-3">
                             <img src="https://i.imgur.com/Z8cYnwz.png" alt="LS Logo" className="h-10 w-auto" referrerPolicy="no-referrer" />
-                            <span className="text-xl font-serif font-bold tracking-wider text-white">
-                                <span className="text-gold">ESTRUTURA</span> FOOD
+                            <span className="text-base transition-all duration-300 tracking-tight">
+                                <span className="font-sans font-black text-white tracking-tighter">ESTRUTURA</span>
+                                <span className="font-serif text-gold ml-1.5">FOOD</span>
                             </span>
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
