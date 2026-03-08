@@ -2,6 +2,7 @@ import React from 'react';
 import { Award, Users, Target, Check, Globe, TrendingUp, ShieldCheck, Database } from 'lucide-react';
 import Section from '../components/common/Section';
 import Heading from '../components/common/Heading';
+import AnimatedSection from '../components/common/AnimatedSection';
 
 const About = () => {
   return (
@@ -11,19 +12,19 @@ const About = () => {
         <div className="absolute inset-0 z-0 text-center opacity-5 pointer-events-none select-none">
           <div className="text-[30rem] font-serif font-bold whitespace-nowrap -rotate-12 translate-y-20">ESTRUTURA</div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <AnimatedSection animation="zoom-in" className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] mb-4 block">Sobre a LS Estrutura Food</span>
           <Heading level={1} className="mb-4 !text-4xl md:!text-6xl max-w-4xl mx-auto">
             Estrutura estratégica aplicada ao crescimento de <span className="text-gold">operações alimentícias</span>
           </Heading>
           <div className="w-24 h-1 bg-gold mx-auto mb-8"></div>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* Story & Experience */}
       <Section dark>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          <div className="space-y-8">
+          <AnimatedSection animation="enter-left" className="space-y-8">
             <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-light">
               <p>
                 A LS Estrutura Food nasce da experiência acumulada na <span className="text-white font-semibold">LS Direção Estratégica</span>, empresa especializada em estruturação comercial e crescimento empresarial em diferentes segmentos.
@@ -51,9 +52,9 @@ const About = () => {
                 Não somos agência. <span className="text-gold">Somos arquitetura de crescimento aplicada.</span>
               </p>
             </div>
-          </div>
+          </AnimatedSection>
 
-          <div className="bg-[#0a1a29] p-8 md:p-12 border border-white/5 relative group">
+          <AnimatedSection animation="enter-right" className="bg-[#0a1a29] p-8 md:p-12 border border-white/5 relative group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full translate-x-12 -translate-y-12"></div>
 
             <Heading level={2} className="!text-2xl mb-8">
@@ -85,26 +86,20 @@ const About = () => {
                 Nossa atuação integra visão empresarial e execução digital em um modelo único de crescimento.
               </p>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </Section>
 
       {/* Principles */}
       <section className="relative py-20 md:py-28 lg:py-36 bg-darker overflow-hidden">
-
-        {/* Decorative background text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-[0.03] overflow-hidden">
           <span className="text-[16rem] font-serif font-bold text-white whitespace-nowrap -rotate-6">BASE</span>
         </div>
-
-        {/* Accent lines */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-terracotta/20 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-          {/* Header */}
-          <div className="text-center mb-16 lg:mb-24">
+          <AnimatedSection animation="zoom-in" className="text-center mb-16 lg:mb-24">
             <span className="inline-flex items-center gap-3 text-terracotta text-[10px] font-black uppercase tracking-[0.4em] mb-5">
               <span className="w-8 h-px bg-terracotta/60" />
               Fundamentos
@@ -114,9 +109,8 @@ const About = () => {
               Princípios que guiam nosso <span className="text-terracotta italic font-serif">Trabalho</span>
             </Heading>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-terracotta to-transparent mx-auto mt-6" />
-          </div>
+          </AnimatedSection>
 
-          {/* Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
@@ -125,7 +119,6 @@ const About = () => {
                 title: 'Resultado com Estrutura',
                 desc: 'Crescimento sustentável exige processo, indicadores e controle de margem.',
                 accent: 'gold',
-                borderHover: 'hover:border-gold/50',
                 iconBg: 'bg-gold/10 text-gold',
                 iconHover: 'group-hover:bg-gold group-hover:text-dark',
                 glow: 'bg-gold/10',
@@ -137,7 +130,6 @@ const About = () => {
                 title: 'Parceria Estratégica',
                 desc: 'Não atuamos como fornecedor. Atuamos como extensão estratégica da operação.',
                 accent: 'terracotta',
-                borderHover: 'hover:border-terracotta/50',
                 iconBg: 'bg-terracotta/10 text-terracotta',
                 iconHover: 'group-hover:bg-terracotta group-hover:text-white',
                 glow: 'bg-terracotta/10',
@@ -149,59 +141,50 @@ const About = () => {
                 title: 'Decisão Baseada em Dados',
                 desc: 'Toda estrutura é construída com base em indicadores reais, não suposições.',
                 accent: 'blue',
-                borderHover: 'hover:border-blue-400/50',
                 iconBg: 'bg-blue-500/10 text-blue-400',
                 iconHover: 'group-hover:bg-blue-500 group-hover:text-white',
                 glow: 'bg-blue-500/10',
                 numColor: 'text-blue-400/10',
               },
             ].map((item, idx) => (
-              <div
+              <AnimatedSection
                 key={idx}
-                className={`group relative bg-[#071622] p-10 rounded-3xl border border-white/5 ${item.borderHover} transition-all duration-700 overflow-hidden hover:-translate-y-3 shadow-2xl`}
+                animation="zoom-in"
+                delay={idx * 200}
+                className="group relative bg-[#071622] p-10 rounded-3xl border border-white/5 hover:border-gold/30 transition-all duration-700 overflow-hidden hover:-translate-y-3 shadow-2xl h-full"
               >
-                {/* Large decorative number */}
                 <div className={`absolute -top-4 -right-2 text-[8rem] font-serif font-black ${item.numColor} leading-none select-none transition-all duration-700 group-hover:scale-110 group-hover:opacity-60`}>
                   {item.number}
                 </div>
-
-                {/* Glow backdrop on hover */}
                 <div className={`absolute -bottom-10 -left-10 w-40 h-40 ${item.glow} rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000`} />
-
                 <div className="relative z-10 flex flex-col h-full">
-                  {/* Icon */}
                   <div className={`w-16 h-16 rounded-2xl ${item.iconBg} ${item.iconHover} flex items-center justify-center mb-8 transition-all duration-500 group-hover:scale-110 shadow-2xl`}>
                     {item.icon}
                   </div>
-
-                  <Heading level={3} className="!text-white !text-xl md:!text-2xl !font-bold !mb-4 group-hover:text-white transition-colors">
+                  <Heading level={3} className="!text-white !text-xl md:!text-2xl !font-bold !mb-4">
                     {item.title}
                   </Heading>
-
-                  <p className="text-gray-400 leading-relaxed text-sm font-light group-hover:text-gray-200 transition-colors">
+                  <p className="text-gray-400 leading-relaxed text-sm font-light">
                     {item.desc}
                   </p>
-
-                  {/* Bottom accent bar */}
                   <div className={`mt-10 h-0.5 bg-gradient-to-r from-transparent ${item.accent === 'gold' ? 'via-gold/50' : item.accent === 'terracotta' ? 'via-terracotta/50' : 'via-blue-500/50'} to-transparent -translate-x-full group-hover:translate-x-0 transition-transform duration-1000`} />
                 </div>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-
       {/* Team */}
       <Section dark>
-        <div className="text-center mb-12 lg:mb-20">
+        <AnimatedSection animation="zoom-in" className="text-center mb-12 lg:mb-20">
           <Heading level={2}>
             Nosso Time de <span className="text-gold">Especialistas</span>
           </Heading>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed mt-4">
             Conheça quem coordena o time LS Estrutura Food.
           </p>
-        </div>
+        </AnimatedSection>
 
         <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-6 lg:gap-10 pb-12 -mx-4 px-4 lg:mx-0 lg:px-0 no-scrollbar snap-x snap-mandatory">
           {[
@@ -224,9 +207,11 @@ const About = () => {
               bio: 'Estrategista de marca especializada em posicionamento e copy estratégica. Constrói autoridade digital e diferencia operações food em mercados competitivos.'
             },
           ].map((member, index) => (
-            <div
+            <AnimatedSection
               key={index}
-              className="group flex flex-col bg-[#071622] p-6 lg:p-8 rounded-2xl border border-white/5 hover:border-gold/30 transition-all duration-700 min-w-[260px] sm:min-w-[320px] lg:min-w-0 snap-center shadow-2xl hover:-translate-y-2"
+              animation="zoom-in"
+              delay={index * 200}
+              className="group flex flex-col bg-[#071622] p-6 lg:p-8 rounded-2xl border border-white/5 hover:border-gold/30 transition-all duration-700 min-w-[260px] sm:min-w-[320px] lg:min-w-0 snap-center shadow-2xl hover:-translate-y-2 h-full"
             >
               <div className="relative mb-6 overflow-hidden rounded-xl aspect-square sm:aspect-[4/5] bg-darker border border-white/5">
                 <img
@@ -248,21 +233,18 @@ const About = () => {
                   {member.bio}
                 </p>
 
-                <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
                   <span className="text-[9px] font-black text-gold uppercase tracking-widest">Especialista LS</span>
                   <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold">
                     <Check size={14} />
                   </div>
                 </div>
               </div>
-
-              {/* Decorative Glow */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-gold/5 rounded-full blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
 
-        {/* Mobile Swipe Navigation Indicator */}
         <div className="flex lg:hidden justify-center items-center gap-2 mt-2">
           <div className="w-6 h-1 bg-gold/40 rounded-full"></div>
           <span className="text-[9px] uppercase tracking-widest text-gray-500 font-bold">Arraste para o lado</span>

@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { ArrowUpRight, Check } from 'lucide-react';
 import Section from '../components/common/Section';
 import Heading from '../components/common/Heading';
+import AnimatedSection from '../components/common/AnimatedSection';
 
 const Projects = () => {
   const { hash } = useLocation();
@@ -33,7 +34,7 @@ const Projects = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-dark/95 via-dark/70 to-dark"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <AnimatedSection animation="zoom-in" className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <Heading level={1}>
             Aplicação <span className="text-gold">Real</span>
           </Heading>
@@ -41,15 +42,13 @@ const Projects = () => {
           <p className="text-gray-400 max-w-2xl mx-auto text-xl font-light">
             Resultados extraordinários construídos através de estratégia, execução e parceria de longo prazo.
           </p>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* ─── Case 1 ─── */}
       <Section dark id="operacao-food" className="border-t border-white/5 pt-12 pb-24 md:pt-16 md:pb-32 lg:pt-24 lg:pb-48 scroll-mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-
-          {/* Left Content */}
-          <div className="space-y-8 lg:space-y-10 animate-fade-in-up">
+          <AnimatedSection animation="enter-left" className="space-y-8 lg:space-y-10">
             <div>
               <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Destaque</span>
               <Heading level={2} className="!text-4xl md:!text-5xl lg:!text-6xl !font-serif !mb-6 italic">
@@ -59,7 +58,6 @@ const Projects = () => {
             </div>
 
             <div className="space-y-8">
-              {/* Desafio */}
               <div className="bg-darker p-10 border-l-4 border-gold shadow-2xl">
                 <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-4">O Desafio</h4>
                 <p className="text-gray-400 font-light leading-relaxed text-lg italic mb-4">
@@ -80,7 +78,6 @@ const Projects = () => {
                 </ul>
               </div>
 
-              {/* Solução */}
               <div className="space-y-6">
                 <h4 className="text-white text-sm font-bold uppercase tracking-widest">Arquitetura Implementada</h4>
                 <p className="text-gray-400 font-light leading-relaxed">
@@ -104,7 +101,6 @@ const Projects = () => {
                 </ul>
               </div>
 
-              {/* Impacto */}
               <div className="bg-gold/5 p-8 rounded-sm space-y-4">
                 <h4 className="text-white text-sm font-bold uppercase tracking-widest">Transformação Estrutural</h4>
                 <p className="text-gray-400 font-light text-sm leading-relaxed mb-1">A operação passou a operar com:</p>
@@ -121,25 +117,21 @@ const Projects = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="text-gray-500 font-light text-xs italic pt-2 border-t border-white/5">
-                  O crescimento deixou de depender de ações isoladas. Passou a ser sustentado por estrutura.
-                </p>
                 <div className="pt-4 grid grid-cols-2 gap-10">
                   <div>
                     <div className="text-4xl font-bold text-white mb-1">100%</div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Processos Integrados entre Produção e Vendas</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Processos Integrados</div>
                   </div>
                   <div>
                     <div className="text-4xl font-bold text-white mb-1">Escala</div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Crescimento baseado em estrutura, não esforço.</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Crescimento Sistêmico</div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
 
-          {/* Right Images */}
-          <div className="flex flex-col gap-8">
+          <AnimatedSection animation="enter-right" className="flex flex-col gap-8">
             <div className="relative group">
               <div className="absolute -top-10 -right-10 w-80 h-80 bg-gold/5 rounded-full blur-[100px] group-hover:bg-gold/10 transition-colors"></div>
               <div className="relative overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)]">
@@ -163,16 +155,14 @@ const Projects = () => {
                 />
               </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </Section>
 
       {/* ─── Case 2 ─── */}
       <Section cream id="expansao" className="py-24 md:py-32 lg:py-48 scroll-mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-
-          {/* Left Images */}
-          <div className="order-2 lg:order-1 flex flex-col gap-8">
+          <AnimatedSection animation="enter-left" className="order-2 lg:order-1 flex flex-col gap-8">
             <div className="relative group">
               <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-terracotta/5 rounded-full blur-[100px] group-hover:bg-terracotta/10 transition-colors"></div>
               <div className="relative overflow-hidden rounded-sm shadow-2xl">
@@ -186,7 +176,6 @@ const Projects = () => {
                 <p className="text-white font-serif italic text-sm font-bold">"A padronização foi o divisor de águas para a nossa expansão."</p>
               </div>
             </div>
-
             <div className="relative group">
               <div className="relative overflow-hidden rounded-sm shadow-2xl">
                 <img
@@ -196,10 +185,9 @@ const Projects = () => {
                 />
               </div>
             </div>
-          </div>
+          </AnimatedSection>
 
-          {/* Right Content */}
-          <div className="order-1 lg:order-2 space-y-8 lg:space-y-10 animate-fade-in-up">
+          <AnimatedSection animation="enter-right" className="order-1 lg:order-2 space-y-8 lg:space-y-10">
             <div>
               <span className="text-terracotta text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Experiência Estratégica</span>
               <Heading level={2} className="!text-4xl md:!text-5xl lg:!text-6xl !font-serif !mb-6 italic !text-dark">
@@ -209,20 +197,17 @@ const Projects = () => {
             </div>
 
             <div className="space-y-8">
-              {/* Contexto */}
               <div className="bg-white p-10 border-l-4 border-dark shadow-2xl">
-                <h4 className="text-dark text-sm font-bold uppercase tracking-widest mb-4">Atuação em Estruturação e Crescimento</h4>
+                <h4 className="text-dark text-sm font-bold uppercase tracking-widest mb-4">Atuação em Estruturação</h4>
                 <p className="text-dark/80 font-light leading-relaxed mb-4">
-                  Ao longo da trajetória profissional dos fundadores e especialistas da LS Estrutura Food, acumulamos experiência direta em expansão empresarial, implantação de processos comerciais e organização de múltiplas operações.
+                  Acumulamos experiência direta em expansão empresarial, implantação de processos comerciais e organização de múltiplas operações em marcas de escala.
                 </p>
-                <p className="text-dark/70 font-bold text-xs uppercase tracking-widest mb-3">Participamos de:</p>
                 <ul className="space-y-2">
                   {[
                     'Estruturação de modelos comerciais',
                     'Implantação de equipes e líderes',
                     'Padronização de processos de venda',
-                    'Criação de indicadores e metas estratégicas',
-                    'Organização de gestão para múltiplas unidades',
+                    'Gestão para múltiplas unidades',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-dark/70 font-light text-sm">
                       <div className="w-1.5 h-1.5 rounded-full bg-terracotta/60 flex-shrink-0 mt-1.5"></div>
@@ -230,35 +215,8 @@ const Projects = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="text-dark/60 font-light text-xs italic pt-4 border-t border-dark/10 mt-4">
-                  Não atuamos apenas no digital. Atuamos na base estrutural do crescimento.
-                </p>
               </div>
 
-              {/* Competência */}
-              <div className="space-y-6">
-                <h4 className="text-dark text-sm font-bold uppercase tracking-widest">Competência Aplicada</h4>
-                <p className="text-dark/80 font-light leading-relaxed text-sm">Nossa experiência envolve:</p>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {[
-                    'Transformar crescimento informal em sistema organizado',
-                    'Estruturar times para operar com previsibilidade',
-                    'Implantar controle por indicadores',
-                    'Criar modelos replicáveis para expansão',
-                    'Treinamentos orientados a performance',
-                    'Painel de acompanhamento centralizado',
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-dark/80">
-                      <div className="w-6 h-6 rounded-full bg-dark/10 flex items-center justify-center flex-shrink-0">
-                        <Check size={14} className="text-dark" />
-                      </div>
-                      <span className="text-sm font-light tracking-wide">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Impacto */}
               <div className="bg-dark/5 p-8 rounded-sm space-y-4">
                 <h4 className="text-dark text-sm font-bold uppercase tracking-widest">Resultado da Experiência</h4>
                 <ul className="space-y-2">
@@ -266,7 +224,7 @@ const Projects = () => {
                     'Expansão com método',
                     'Gestão orientada a dados',
                     'Estrutura antes da escala',
-                    'Auditoria de qualidade entre unidades',
+                    'Auditoria de qualidade centralizada',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-dark/70 font-light text-sm">
                       <div className="w-1.5 h-1.5 rounded-full bg-terracotta/60 flex-shrink-0 mt-1.5"></div>
@@ -274,31 +232,26 @@ const Projects = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="text-dark/50 font-light text-xs italic pt-2 border-t border-dark/10">
-                  Saímos da gestão por esforço individual. Entramos na gestão por método.
-                </p>
                 <div className="pt-4 grid grid-cols-2 gap-10">
                   <div>
                     <div className="text-4xl font-bold text-terracotta mb-1">Múltiplas</div>
-                    <div className="text-[10px] text-dark/50 uppercase tracking-widest font-bold">Unidades com padrão operacional unificado</div>
+                    <div className="text-[10px] text-dark/50 uppercase tracking-widest font-bold">Unidades com padrão unificado</div>
                   </div>
                   <div>
                     <div className="text-4xl font-bold text-terracotta mb-1">100%</div>
-                    <div className="text-[10px] text-dark/50 uppercase tracking-widest font-bold">Acompanhamento sistêmico de performance</div>
+                    <div className="text-[10px] text-dark/50 uppercase tracking-widest font-bold">Acompanhamento Sistêmico</div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </Section>
 
       {/* ─── Case 3 ─── */}
       <Section dark id="marketing-360" className="py-24 pb-32 md:py-32 md:pb-40 lg:py-48 lg:pb-64 scroll-mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-
-          {/* Left Content */}
-          <div className="space-y-8 lg:space-y-10 animate-fade-in-up">
+          <AnimatedSection animation="enter-left" className="space-y-8 lg:space-y-10">
             <div>
               <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Especialização Técnica</span>
               <Heading level={2} className="!text-4xl md:!text-5xl lg:!text-6xl !font-serif !mb-6 italic">
@@ -308,35 +261,23 @@ const Projects = () => {
             </div>
 
             <div className="space-y-8">
-              {/* Contexto */}
               <div className="bg-darker p-10 border-l-4 border-gold shadow-2xl">
                 <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-4">Contexto Estratégico</h4>
                 <p className="text-gray-400 font-light leading-relaxed text-lg italic mb-4">
-                  Operações food que dependem exclusivamente de marketplaces ou ações isoladas de mídia vivem sob pressão constante de margem.
-                </p>
-                <p className="text-gray-400 font-light leading-relaxed text-sm">
-                  Sem posicionamento sólido e aquisição estruturada, o crescimento se torna instável, caro e imprevisível.
-                </p>
-                <p className="text-gray-400 font-light leading-relaxed text-sm italic mt-3">
-                  O desafio não é anunciar. É construir uma máquina previsível de aquisição com controle de ROI e fortalecimento de marca.
+                  Operações food que dependem exclusivamente de marketplaces vivem sob pressão constante de margem. Criamos independência.
                 </p>
               </div>
 
-              {/* Solução */}
               <div className="space-y-6">
-                <h4 className="text-white text-sm font-bold uppercase tracking-widest">Arquitetura de Marketing Implementada</h4>
-                <p className="text-gray-400 font-light leading-relaxed text-sm">
-                  Desenvolvemos uma estrutura completa de Marketing 360 integrada à operação:
-                </p>
+                <h4 className="text-white text-sm font-bold uppercase tracking-widest">Marketing de Alta Performance</h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
                     'Estratégia de posicionamento digital',
-                    'Gestão estratégica de tráfego pago orientado a ROI',
+                    'Gestão estratégica de tráfego (ROI)',
                     'Estruturação de funil próprio',
-                    'Produção de conteúdo estratégico (real + IA)',
                     'Growth aplicado ao segmento food',
-                    'Estratégias de retenção e aumento de LTV',
-                    'Maximização de ticket médio no digital',
+                    'Estratégias de retenção e LTV',
+                    'Maximização de ticket médio',
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-300">
                       <div className="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
@@ -346,44 +287,25 @@ const Projects = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="text-gray-500 font-light text-xs italic">
-                  Não geramos apenas alcance. Construímos ativos digitais.
-                </p>
               </div>
 
-              {/* Impacto */}
               <div className="bg-gold/5 p-8 rounded-sm space-y-4">
                 <h4 className="text-white text-sm font-bold uppercase tracking-widest">Transformação Digital</h4>
-                <p className="text-gray-400 font-light text-sm">A marca passou a operar com:</p>
-                <ul className="space-y-2">
-                  {[
-                    'Base própria de clientes',
-                    'Aquisição previsível',
-                    'Marca fortalecida no digital',
-                    'Estratégia orientada por dados',
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-400 font-light text-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-gold/60 flex-shrink-0 mt-1.5"></div>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
                 <div className="pt-4 grid grid-cols-2 gap-10">
                   <div>
                     <div className="text-4xl font-bold text-white mb-1">Evolução</div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">De presença digital dispersa para posicionamento consolidado</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Posicionamento Consolidado</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-white mb-1">LTV</div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Fidelização e aumento do valor por cliente</div>
+                    <div className="text-4xl font-bold text-white mb-1">Independência</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Canais Proprietários</div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
 
-          {/* Right Images */}
-          <div className="flex flex-col gap-8">
+          <AnimatedSection animation="enter-right" className="flex flex-col gap-8">
             <div className="relative group">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gold/5 rounded-full blur-[100px] group-hover:bg-gold/10 transition-colors"></div>
               <div className="relative overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/5">
@@ -394,10 +316,9 @@ const Projects = () => {
                 />
               </div>
               <div className="absolute bottom-6 -right-6 bg-gold p-6 max-w-[200px] hidden md:block group-hover:-translate-x-4 transition-transform duration-500 shadow-2xl z-10">
-                <p className="text-dark font-serif italic text-sm font-bold">"Eficiência digital que liberta a marca dos agregadores."</p>
+                <p className="text-dark font-serif italic text-sm font-bold">"Eficiência digital que liberta a marca."</p>
               </div>
             </div>
-
             <div className="relative group">
               <div className="relative overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/5">
                 <img
@@ -407,7 +328,7 @@ const Projects = () => {
                 />
               </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </Section>
     </div>

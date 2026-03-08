@@ -34,6 +34,30 @@ h6 {
 }
 
 
+@keyframes enterFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes enterFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -43,6 +67,18 @@ h6 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -61,7 +97,19 @@ h6 {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-zoom-in {
+  animation: zoomIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-enter-left {
+  animation: enterFromLeft 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-enter-right {
+  animation: enterFromRight 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .animate-float {
@@ -69,23 +117,23 @@ h6 {
 }
 
 .delay-100 {
-  animation-delay: 100ms;
-}
-
-.delay-200 {
   animation-delay: 200ms;
 }
 
+.delay-200 {
+  animation-delay: 400ms;
+}
+
 .delay-300 {
-  animation-delay: 300ms;
+  animation-delay: 600ms;
 }
 
 .delay-500 {
-  animation-delay: 500ms;
+  animation-delay: 1000ms;
 }
 
 .delay-700 {
-  animation-delay: 700ms;
+  animation-delay: 1400ms;
 }
 
 /* Custom Utilities */

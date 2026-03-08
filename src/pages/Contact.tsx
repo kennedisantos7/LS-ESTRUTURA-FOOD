@@ -4,6 +4,7 @@ import Section from '../components/common/Section';
 import Heading from '../components/common/Heading';
 import Button from '../components/common/Button';
 import { CONTACT_INFO } from '../constants/navigation';
+import AnimatedSection from '../components/common/AnimatedSection';
 
 const Contact = () => {
   return (
@@ -19,7 +20,7 @@ const Contact = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-dark/95 via-dark/70 to-dark"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <AnimatedSection animation="zoom-in" className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <Heading level={1}>
             Entre em <span className="text-gold">Contato</span>
           </Heading>
@@ -27,14 +28,14 @@ const Contact = () => {
           <p className="text-gray-400 max-w-2xl mx-auto text-xl font-light">
             Estamos prontos para ouvir seus desafios e propor soluções sob medida para o seu negócio.
           </p>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* Contact Content */}
       <Section dark>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
           {/* Form */}
-          <div className="bg-darker p-8 lg:p-10 rounded-sm shadow-2xl border border-white/5 relative">
+          <AnimatedSection animation="enter-left" className="bg-darker p-8 lg:p-10 rounded-sm shadow-2xl border border-white/5 relative">
             <div className="absolute top-0 left-0 w-1 h-20 bg-gold"></div>
             <Heading level={2} className="mb-10">
               Envie uma <span className="text-gold">Mensagem</span>
@@ -94,10 +95,10 @@ const Contact = () => {
                 <Send size={14} className="ml-3 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </form>
-          </div>
+          </AnimatedSection>
 
           {/* Info */}
-          <div className="space-y-12">
+          <AnimatedSection animation="enter-right" className="space-y-12">
             <div className="space-y-8">
               <Heading level={2} className="mb-0">
                 Informações de <span className="text-gold">Contato</span>
@@ -107,40 +108,25 @@ const Contact = () => {
               </p>
 
               <div className="space-y-10">
-                <div className="flex items-start gap-6 group">
-                  <div className="w-14 h-14 bg-gold/5 rounded-full flex items-center justify-center text-gold border border-gold/10 group-hover:bg-gold group-hover:text-dark transition-all duration-500 flex-shrink-0">
-                    <MapPin size={24} />
+                {[
+                  { icon: <MapPin size={24} />, title: 'Endereço', content: CONTACT_INFO.address },
+                  { icon: <Phone size={24} />, title: 'Canais Diretos', content: CONTACT_INFO.phone, sub: 'Atendimento via WhatsApp disponível' },
+                  { icon: <Mail size={24} />, title: 'E-mail', content: CONTACT_INFO.email },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-6 group">
+                    <div className="w-14 h-14 bg-gold/5 rounded-full flex items-center justify-center text-gold border border-gold/10 group-hover:bg-gold group-hover:text-dark transition-all duration-500 flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold text-gold uppercase tracking-[0.2em] mb-2">{item.title}</h3>
+                      <p className="text-gray-300 font-light leading-relaxed">{item.content}</p>
+                      {item.sub && <p className="text-gray-500 text-sm italic">{item.sub}</p>}
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xs font-bold text-gold uppercase tracking-[0.2em] mb-2">Endereço</h3>
-                    <p className="text-gray-300 font-light leading-relaxed">{CONTACT_INFO.address}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6 group">
-                  <div className="w-14 h-14 bg-gold/5 rounded-full flex items-center justify-center text-gold border border-gold/10 group-hover:bg-gold group-hover:text-dark transition-all duration-500 flex-shrink-0">
-                    <Phone size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-bold text-gold uppercase tracking-[0.2em] mb-2">Canais Diretos</h3>
-                    <p className="text-gray-300 font-light leading-relaxed">{CONTACT_INFO.phone}</p>
-                    <p className="text-gray-500 text-sm italic">Atendimento via WhatsApp disponível</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6 group">
-                  <div className="w-14 h-14 bg-gold/5 rounded-full flex items-center justify-center text-gold border border-gold/10 group-hover:bg-gold group-hover:text-dark transition-all duration-500 flex-shrink-0">
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-bold text-gold uppercase tracking-[0.2em] mb-2">E-mail</h3>
-                    <p className="text-gray-300 font-light leading-relaxed">{CONTACT_INFO.email}</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
-
-          </div>
+          </AnimatedSection>
         </div>
       </Section>
     </div>

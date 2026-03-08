@@ -5,6 +5,7 @@ import Section from '../components/common/Section';
 import Heading from '../components/common/Heading';
 import Button from '../components/common/Button';
 import { useDiagnosticModal } from '../context/DiagnosticModalContext';
+import AnimatedSection from '../components/common/AnimatedSection';
 
 const Services = () => {
   const { hash } = useLocation();
@@ -84,7 +85,7 @@ const Services = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#020609] via-transparent to-[#020609]"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <AnimatedSection animation="zoom-in" className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <span className="inline-flex items-center gap-2 text-terracotta text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-5">
             <span className="w-8 h-px bg-terracotta/60 inline-block" />
             Arquitetura de Crescimento
@@ -97,25 +98,18 @@ const Services = () => {
           <p className="text-gray-400 max-w-2xl mx-auto text-xl font-light leading-relaxed">
             Uma jornada estruturada para tirar sua operação do improviso e colocá-la na rota da escala lucrativa.
           </p>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* Metodo Section – logo após o hero */}
       <section id="metodo" className="relative bg-dark overflow-hidden pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-24 scroll-mt-20">
-
-        {/* Decorative background text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-[0.025] overflow-hidden">
           <span className="text-[18rem] font-serif font-bold text-white whitespace-nowrap -rotate-6">MÉTODO</span>
         </div>
-
-        {/* Top accent line */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-          {/* Steps */}
           <div className="relative">
-            {/* Desktop connector line */}
             <div className="hidden lg:block absolute top-[3.5rem] left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent z-0" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
@@ -126,14 +120,16 @@ const Services = () => {
                 { step: '04', title: 'Escala', desc: 'Expansão via tráfego pago, canais proprietários e aquisição direta.', icon: <Rocket size={22} />, iconBg: 'bg-terracotta/15', iconColor: 'text-terracotta', border: 'border-terracotta/30 hover:border-terracotta/60', dotColor: 'bg-terracotta', grad: 'from-terracotta/[0.15] to-transparent' },
                 { step: '05', title: 'Gestão', desc: 'Análise contínua de indicadores para crescimento previsível e consistente.', icon: <BarChart3 size={22} />, iconBg: 'bg-gold/15', iconColor: 'text-gold', border: 'border-gold/30 hover:border-gold/60', dotColor: 'bg-gold', grad: 'from-gold/[0.15] to-transparent' },
               ].map((phase, i) => (
-                <div key={i} className="group relative flex lg:flex-col gap-3 lg:gap-0 items-start lg:items-center">
-
-                  {/* Mobile vertical connector */}
+                <AnimatedSection
+                  key={i}
+                  animation="zoom-in"
+                  delay={i * 150}
+                  className="group relative flex lg:flex-col gap-3 lg:gap-0 items-start lg:items-center h-full"
+                >
                   {i < 4 && (
                     <div className="lg:hidden absolute left-[1.2rem] top-12 w-px h-[calc(100%+1.5rem)] bg-gradient-to-b from-white/20 via-white/10 to-transparent z-0" />
                   )}
 
-                  {/* Icon */}
                   <div className="relative z-10 flex-shrink-0">
                     <div className={`w-10 h-10 lg:w-14 lg:h-14 rounded-full ${phase.iconBg} border ${phase.border} flex items-center justify-center ${phase.iconColor} group-hover:scale-110 transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,0.3)] backdrop-blur-sm`}>
                       {phase.icon}
@@ -143,8 +139,7 @@ const Services = () => {
                     </div>
                   </div>
 
-                  {/* Card */}
-                  <div className={`lg:mt-6 flex-1 w-full bg-gradient-to-b ${phase.grad} border ${phase.border} rounded-xl p-5 lg:p-6 transition-all duration-500 group-hover:-translate-y-1 lg:group-hover:-translate-y-2 group-hover:shadow-2xl lg:text-center backdrop-blur-[2px]`}>
+                  <div className={`lg:mt-6 flex-1 w-full bg-gradient-to-b ${phase.grad} border ${phase.border} rounded-xl p-5 lg:p-6 transition-all duration-500 group-hover:-translate-y-1 lg:group-hover:-translate-y-2 group-hover:shadow-2xl lg:text-center backdrop-blur-[2px] h-full`}>
                     <div className="text-4xl lg:text-5xl font-serif italic font-bold text-white/[0.08] group-hover:text-white/[0.12] transition-colors duration-500 leading-none mb-1 select-none">
                       {phase.step}
                     </div>
@@ -155,12 +150,11 @@ const Services = () => {
                       {phase.desc}
                     </p>
                   </div>
-                </div>
+                </AnimatedSection>
               ))}
             </div>
           </div>
 
-          {/* Bottom note */}
           <div className="mt-14 md:mt-20 text-center">
             <div className="inline-block px-6 py-3 border border-white/5 rounded-full bg-white/[0.02]">
               <p className="text-gray-500 text-xs font-light tracking-wide italic">
@@ -169,14 +163,12 @@ const Services = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom accent line */}
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
       {/* Services List */}
       <Section dark>
-        <div className="text-center mb-12 lg:mb-16">
+        <AnimatedSection animation="zoom-in" className="text-center mb-12 lg:mb-16">
           <span className="text-gold text-xs font-bold uppercase tracking-[0.35em] mb-4 block">Soluções Integradas</span>
           <Heading level={2} className="!text-4xl md:!text-5xl lg:!text-6xl">
             Nossas <span className="text-gold">Soluções</span>
@@ -185,7 +177,8 @@ const Services = () => {
           <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light">
             Cada solução é uma peça da nossa arquitetura de crescimento, aplicada de forma integrada à sua operação.
           </p>
-        </div>
+        </AnimatedSection>
+
         <div className="space-y-24 lg:space-y-40">
           {services.map((service, index) => (
             <div
@@ -193,7 +186,7 @@ const Services = () => {
               id={service.id}
               className={`flex flex-col lg:flex-row items-center gap-10 lg:gap-16 scroll-mt-24 lg:scroll-mt-32 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
             >
-              <div className="w-full lg:w-1/2">
+              <AnimatedSection animation={index % 2 === 0 ? 'enter-left' : 'enter-right'} className="w-full lg:w-1/2">
                 <div className="relative group p-4 border border-gold/10 bg-gold/5 rounded-sm">
                   <div className="relative overflow-hidden aspect-[4/3] rounded-sm">
                     <div className="absolute inset-0 bg-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"></div>
@@ -206,8 +199,8 @@ const Services = () => {
                   </div>
                   <div className="absolute -bottom-6 -right-6 w-32 h-32 border-r-2 border-b-2 border-gold/20 -z-10 group-hover:border-gold/40 transition-colors"></div>
                 </div>
-              </div>
-              <div className="w-full lg:w-1/2 space-y-6">
+              </AnimatedSection>
+              <AnimatedSection animation={index % 2 === 0 ? 'enter-right' : 'enter-left'} className="w-full lg:w-1/2 space-y-6">
                 <div className="flex items-center gap-4 text-gold mb-2">
                   <div className="p-3 bg-gold/10 rounded-lg">
                     {service.icon}
@@ -233,7 +226,7 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </AnimatedSection>
             </div>
           ))}
         </div>
@@ -241,7 +234,7 @@ const Services = () => {
 
       {/* CTA Section */}
       <Section dark className="text-center bg-[#020609]">
-        <div className="max-w-4xl mx-auto py-12">
+        <AnimatedSection animation="zoom-in" className="max-w-4xl mx-auto py-12">
           <Heading level={2} className="mb-6 !text-5xl">
             Sua Operação com <span className="text-gold italic font-serif">Previsibilidade</span>
           </Heading>
@@ -251,7 +244,7 @@ const Services = () => {
           <Button onClick={openModal} variant="primary" className="!px-12 !py-5 !text-lg shadow-xl shadow-gold/5">
             Solicitar Diagnóstico Estratégico
           </Button>
-        </div>
+        </AnimatedSection>
       </Section>
     </div>
   );
