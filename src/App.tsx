@@ -23,10 +23,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="services" element={<Services />} />
-            <Route path="projects" element={<Projects />} />
-            <Route path="contact" element={<Contact />} />
+            <Route path="sobre" element={<About />} />
+            <Route path="servicos" element={<Services />} />
+            <Route path="projetos" element={<Projects />} />
+            <Route path="contato" element={<Contact />} />
           </Route>
         </Routes>
         <DiagnosticModal />

@@ -1,8 +1,8 @@
 export const NAV_LINKS = [
-  { name: 'Serviços', path: '/services' },
-  { name: 'Aplicação Real', path: '/projects' },
-  { name: 'Sobre', path: '/about' },
-  { name: 'Contato', path: '/contact' },
+  { name: 'Serviços', path: '/servicos' },
+  { name: 'Aplicação Real', path: '/projetos' },
+  { name: 'Sobre', path: '/sobre' },
+  { name: 'Contato', path: '/contato' },
 ];
 
 export const CONTACT_INFO = {

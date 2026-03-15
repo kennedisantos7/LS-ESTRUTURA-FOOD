@@ -160,7 +160,7 @@ const Home = () => {
                 </li>
               ))}
             </ul>
-            <Button to="/services" variant="outline" className="!border-terracotta !text-terracotta hover:!bg-terracotta hover:!text-white group">
+            <Button to="/servicos" variant="outline" className="!border-terracotta !text-terracotta hover:!bg-terracotta hover:!text-white group">
               Conheça Nosso Método de Estruturação <ArrowRight className="ml-2 inline group-hover:translate-x-2 transition-transform" size={16} />
             </Button>
           </AnimatedSection>
@@ -229,7 +229,7 @@ const Home = () => {
               className="flex-1 min-w-[290px] md:min-w-0 snap-center h-full"
             >
               <Link
-                to={`/services#${service.link}`}
+                to={`/servicos#${service.link}`}
                 className={`group relative bg-[#071622] p-8 md:p-12 border border-white/5 rounded-3xl transition-all duration-700 overflow-hidden flex flex-col h-full ${service.border} hover:-translate-y-4 shadow-2xl`}
               >
                 <div className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${service.bgGrad} rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000`}></div>
@@ -297,7 +297,7 @@ const Home = () => {
               Aplicação <span className="text-terracotta italic font-serif">Real</span>
             </Heading>
           </div>
-          <Button to="/services#metodo" variant="outline" className="!border-terracotta !text-terracotta hover:!bg-terracotta hover:!text-white group !rounded-full !px-8 text-xs md:text-sm">
+          <Button to="/servicos#metodo" variant="outline" className="!border-terracotta !text-terracotta hover:!bg-terracotta hover:!text-white group !rounded-full !px-8 text-xs md:text-sm">
             Conhecer Nossa Metodologia <ArrowRight className="ml-2 inline group-hover:translate-x-2 transition-transform" size={16} />
           </Button>
         </AnimatedSection>
@@ -355,7 +355,7 @@ const Home = () => {
               className="flex-1 min-w-[300px] sm:min-w-[380px] lg:min-w-0 snap-center h-full"
             >
               <Link
-                to={`/projects#${project.anchor}`}
+                to={`/projetos#${project.anchor}`}
                 className="group relative flex flex-col bg-[#071622] rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 lg:hover:-translate-y-3 border border-white/5 hover:border-gold/30 h-full"
               >
                 <div className="relative aspect-[16/11] overflow-hidden">

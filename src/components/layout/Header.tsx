@@ -39,7 +39,7 @@ const Header = () => {
                         {/* CTA/Mobile Menu Toggle */}
                         <div className="flex items-center gap-4">
                             <div className="hidden lg:block">
-                                <Button to="/contact" variant="outline" className="px-6 py-2 text-[10px]">
+                                <Button to="/contato" variant="outline" className="px-6 py-2 text-[10px]">
                                     Diagnóstico
                                 </Button>
                             </div>

@@ -71,7 +71,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
                             }}
                         >
                             <Button
-                                to="/contact"
+                                to="/contato"
                                 variant="primary"
                                 className="w-full !py-5 !text-sm uppercase tracking-widest shadow-xl shadow-gold/5"
                                 onClick={onClose}
