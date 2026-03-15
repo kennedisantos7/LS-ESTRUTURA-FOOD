@@ -355,7 +355,7 @@ const Home = () => {
               className="flex-1 min-w-[300px] sm:min-w-[380px] lg:min-w-0 snap-center h-full"
             >
               <Link
-                to={`/projetos#${project.anchor}`}
+                to={`/aplicacaoreal#${project.anchor}`}
                 className="group relative flex flex-col bg-[#071622] rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 lg:hover:-translate-y-3 border border-white/5 hover:border-gold/30 h-full"
               >
                 <div className="relative aspect-[16/11] overflow-hidden">
