@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, ChevronRight, ChevronLeft, CheckCircle, Building2, Mail, User, TrendingUp, Phone } from 'lucide-react';
 import { useDiagnosticModal } from '../../context/DiagnosticModalContext';
-
+import { supabase } from '../../lib/supabase';
 const faturamentoOptions = [
     { value: 'ate_10k', label: 'Até R$ 10.000 / mês' },
     { value: '10k_30k', label: 'Entre R$ 10.000 e R$ 30.000 / mês' },
@@ -31,7 +31,23 @@ const DiagnosticModal: React.FC = () => {
     };
 
     const handleChange = (field: string, value: string) => {
-        setForm(p => ({ ...p, [field]: value }));
+        let formattedValue = value;
+
+        if (field === 'telefone') {
+            const numeric = value.replace(/\D/g, ''); // Apenas números
+            
+            if (numeric.length <= 11) {
+                if (numeric.length === 0) formattedValue = '';
+                else if (numeric.length <= 2) formattedValue = `(${numeric}`;
+                else if (numeric.length <= 6) formattedValue = `(${numeric.slice(0, 2)}) ${numeric.slice(2)}`;
+                else if (numeric.length <= 10) formattedValue = `(${numeric.slice(0, 2)}) ${numeric.slice(2, 6)}-${numeric.slice(6)}`;
+                else formattedValue = `(${numeric.slice(0, 2)}) ${numeric.slice(2, 7)}-${numeric.slice(7, 11)}`;
+            } else {
+                return; // Impede digitar mais de 11 números
+            }
+        }
+
+        setForm(p => ({ ...p, [field]: formattedValue }));
         if (errors[field]) setErrors(p => ({ ...p, [field]: '' }));
     };
 
@@ -42,8 +58,25 @@ const DiagnosticModal: React.FC = () => {
             if (!form.responsavel.trim()) e.responsavel = 'Informe o nome do responsável';
         }
         if (step === 2) {
-            if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) e.email = 'Informe um e-mail válido';
-            if (!form.telefone.trim()) e.telefone = 'Informe um telefone / WhatsApp';
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const phoneRegex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/; // Aceita (11) 99999-9999 ou 11999999999 etc
+            
+            // Remove caracteres não numéricos para verificar tamanho real do telefone
+            const numericPhone = form.telefone.replace(/\D/g, '');
+
+            if (!form.email.trim()) {
+                e.email = 'Informe o e-mail';
+            } else if (!emailRegex.test(form.email)) {
+                e.email = 'E-mail inválido. Certifique-se de usar @ e um domínio válido (ex: .com)';
+            }
+
+            if (!form.telefone.trim()) {
+                e.telefone = 'Informe o telefone / WhatsApp';
+            } else if (numericPhone.length < 10 || numericPhone.length > 11) {
+                e.telefone = 'Telefone inválido. Digite o DDD + Número (ex: 11999998888)';
+            } else if (!phoneRegex.test(form.telefone)) {
+                e.telefone = 'Formato inválido. Use (XX) XXXXX-XXXX';
+            }
         }
         if (step === 3) {
             if (!form.faturamento) e.faturamento = 'Selecione uma faixa de faturamento';
@@ -55,18 +88,30 @@ const DiagnosticModal: React.FC = () => {
     const next = () => { if (validateStep()) setStep(s => Math.min(s + 1, 3)); };
     const back = () => { setErrors({}); setStep(s => Math.max(s - 1, 1)); };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (!validateStep()) return;
         const fatLabel = faturamentoOptions.find(o => o.value === form.faturamento)?.label || '';
+        
+        try {
+            const { error } = await supabase.from('ls_ef').insert([
+                {
+                    empresa: form.empresa,
+                    responsavel: form.responsavel,
+                    email: form.email,
+                    telefone: form.telefone,
+                    faturamento: fatLabel
+                }
+            ]);
+            if (error) {
+                console.error('Erro ao salvar no banco de dados:', error);
+            }
+        } catch (err) {
+            console.error('Erro inesperado:', err);
+        }
+
         const phoneNumber = '5517991625639';
         const message = encodeURIComponent(
-            `*Diagnóstico Estratégico — LS Estrutura Food*\n\n` +
-            `*Empresa:* ${form.empresa}\n` +
-            `*Responsável:* ${form.responsavel}\n` +
-            `*E-mail:* ${form.email}\n` +
-            `*Telefone:* ${form.telefone}\n` +
-            `*Faturamento:* ${fatLabel}\n\n` +
-            `Olá! Gostaria de agendar meu diagnóstico estratégico gratuito.`
+            "Olá gostaria de saber mais e agendar uma Consultoria Gratuita"
         );
         setSubmitted(true);
         setTimeout(() => {
